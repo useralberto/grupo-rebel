@@ -23,3 +23,7 @@ web/bucket
 .ddev/*
 !.ddev/config.yaml
 
+#Compilation
+/webpack-settings/*
+!/webpack-settings/builders-config/
+

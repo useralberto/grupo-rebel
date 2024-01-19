@@ -1,0 +1,37 @@
+{
+  "name": "ondemandloading-template",
+  "version": "1.0.0",
+  "description": "OnDemandLoading Template",
+  "main": "index.js",
+  "scripts": {
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "production": "mix --production",
+    "prod": "npm run production",
+    "compress": "bread-compressor -s web/css/*.css web/js/*.js",
+    "ucl": "node ./webpack-settings/builders-config/update-components-list.js",
+    "upal": "node ./webpack-settings/builders-config/update-partials-list.js",
+    "upl": "node ./webpack-settings/builders-config/update-pages-list.js",
+    "uall": "node ./webpack-settings/builders-config/updateListScript.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "headroom.js": "^0.12.0",
+    "swiper": "^10.3.1",
+    "yarn": "^1.22.19"
+  },
+  "devDependencies": {
+    "@prettier/plugin-php": "^0.20.1",
+    "@fullhuman/postcss-purgecss": "^5.0.0",
+    "laravel-mix": "^6.0.49",
+    "hamburgers": "^1.2.1",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.55.0",
+    "sass-loader": "^12.1.0"
+  }
+}

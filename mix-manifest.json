@@ -1,0 +1,10 @@
+{
+    "/web/assets/js/bootstrap.js": "/web/assets/js/bootstrap.js",
+    "/web/assets/js/app.js": "/web/assets/js/app.js",
+    "/web/assets/js/components/mastHead.component.js": "/web/assets/js/components/mastHead.component.js",
+    "/web/assets/css/components/blockText.component.css": "/web/assets/css/components/blockText.component.css",
+    "/web/assets/css/components/mastHead.component.css": "/web/assets/css/components/mastHead.component.css",
+    "/web/assets/css/base.css": "/web/assets/css/base.css",
+    "/web/assets/css/app.css": "/web/assets/css/app.css",
+    "/web/assets/css/bootstrap.css": "/web/assets/css/bootstrap.css"
+}
