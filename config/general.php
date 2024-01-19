@@ -1,4 +1,5 @@
 <?php
+
 /**
  * General Configuration
  *
@@ -11,23 +12,59 @@
 use craft\config\GeneralConfig;
 use craft\helpers\App;
 
-return GeneralConfig::create()
+$isDev = App::env("CRAFT_ENVIRONMENT") === "dev";
+$isProd = App::env("CRAFT_ENVIRONMENT") === "production";
+
+$settings = GeneralConfig::create()
     // Set the default week start day for date pickers (0 = Sunday, 1 = Monday, etc.)
     ->defaultWeekStartDay(1)
     // Prevent generated URLs from including "index.php"
     ->omitScriptNameInUrls()
     // Enable Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
-    ->devMode(App::env('DEV_MODE') ?? false)
-    // Preload Single entries as Twig variables
-    ->preloadSingles()
+    ->devMode($isProd ? false : App::env("DEV_MODE") ?? $isDev)
     // Allow administrative changes
-    ->allowAdminChanges(App::env('ALLOW_ADMIN_CHANGES') ?? false)
+    ->allowAdminChanges(App::env("ALLOW_ADMIN_CHANGES") ?? false)
     // Disallow robots
-    ->disallowRobots(App::env('DISALLOW_ROBOTS') ?? false)
-    // Prevent user enumeration attacks
-    ->preventUserEnumeration()
-    // Set the @webroot alias so the clear-caches command knows where to find CP resources
+    //->disallowRobots(App::env("DISALLOW_ROBOTS") ?? false)
+    ->disallowRobots($isProd ? false : App::env("DISALLOW_ROBOTS") ?? $isDev)
+    ->cpTrigger(App::env("CRAFT_CP_TRIGGER") ?? "admin")
+    ->limitAutoSlugsToAscii(true)
+    ->imageDriver("imagick")
+    ->sendPoweredByHeader(false)
+    ->maxUploadFileSize("209715200")
+    ->defaultTemplateExtensions(["twig"])
+    ->brokenImagePath("/assets/img/default.jpg")
+    ->transformSvgs(false)
+    ->transformGifs(false)
+    ->usePathInfo(true)
+    ->allowUpdates($isDev)
     ->aliases([
-        '@webroot' => dirname(__DIR__) . '/web',
+        "@webroot" => dirname(__DIR__) . "/web",
+        "@web" => App::env("PRIMARY_SITE_URL"),
     ])
-;
+    ->extraFileKinds([
+        'svg' => [
+            'label' => 'SVG',
+            'extensions' => ['svg'],
+        ],
+    ])
+    ->errorTemplatePrefix("/errors/");
+
+if ($isDev) {
+    $settings->disabledPlugins(["fastcgi-cache-bust"]);
+}
+
+if ($isProd) {
+    $settings
+        ->disabledPlugins([
+            "dumper",
+            "elements-panel",
+            "cp-field-inspect",
+            "quick-field",
+            "field-manager"
+        ])
+        ->usePathInfo(true)
+        ->omitScriptNameInUrls(true);
+}
+
+return $settings;

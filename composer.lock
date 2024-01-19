@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ca658de19bf7ceec8bae1c4e2a3b975a",
+    "content-hash": "4b228def8fbd548ce670e144c2b11604",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -881,6 +881,55 @@
             "time": "2024-01-16T18:07:18+00:00"
         },
         {
+            "name": "craftcms/html-field",
+            "version": "2.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/html-field.git",
+                "reference": "4797c9cb0397e6d69d25d9716a75f7b47c69fd3a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/html-field/zipball/4797c9cb0397e6d69d25d9716a75f7b47c69fd3a",
+                "reference": "4797c9cb0397e6d69d25d9716a75f7b47c69fd3a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.0.2"
+            },
+            "require-dev": {
+                "craftcms/cms": "4.0.0-RC1",
+                "craftcms/ecs": "dev-main",
+                "craftcms/phpstan": "dev-main",
+                "craftcms/rector": "dev-main"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "craft\\htmlfield\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Base class for Craft CMS field types with HTML values.",
+            "support": {
+                "docs": "https://github.com/craftcms/html-field/blob/main/README.md",
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/html-field/issues?state=open",
+                "rss": "https://github.com/craftcms/html-field/commits/main.atom",
+                "source": "https://github.com/craftcms/html-field"
+            },
+            "time": "2023-09-17T11:24:51+00:00"
+        },
+        {
             "name": "craftcms/plugin-installer",
             "version": "1.6.0",
             "source": {
@@ -934,6 +983,68 @@
             "time": "2023-02-22T13:17:00+00:00"
         },
         {
+            "name": "craftcms/redactor",
+            "version": "3.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/redactor.git",
+                "reference": "3e71faf0f129025d8814207e496870ce6deeef01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/redactor/zipball/3e71faf0f129025d8814207e496870ce6deeef01",
+                "reference": "3e71faf0f129025d8814207e496870ce6deeef01",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0-alpha.1",
+                "craftcms/html-field": "^2.0.0",
+                "php": "^8.0.2"
+            },
+            "require-dev": {
+                "craftcms/ecs": "dev-main",
+                "craftcms/phpstan": "dev-main",
+                "craftcms/rector": "dev-main"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Redactor",
+                "handle": "redactor",
+                "documentationUrl": "https://github.com/craftcms/redactor/blob/v2/README.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craft\\redactor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pixel & Tonic",
+                    "homepage": "https://pixelandtonic.com/"
+                }
+            ],
+            "description": "Edit rich text content in Craft CMS using Redactor by Imperavi.",
+            "keywords": [
+                "Redactor",
+                "cms",
+                "craftcms",
+                "html",
+                "yii2"
+            ],
+            "support": {
+                "docs": "https://github.com/craftcms/redactor/blob/v2/README.md",
+                "email": "support@craftcms.com",
+                "issues": "https://github.com/craftcms/redactor/issues?state=open",
+                "rss": "https://github.com/craftcms/redactor/commits/v2.atom",
+                "source": "https://github.com/craftcms/redactor"
+            },
+            "time": "2023-03-16T23:00:48+00:00"
+        },
+        {
             "name": "craftcms/server-check",
             "version": "2.1.7",
             "source": {
@@ -974,6 +1085,66 @@
                 "source": "https://github.com/craftcms/server-check"
             },
             "time": "2023-09-20T01:56:57+00:00"
+        },
+        {
+            "name": "craftsnippets/craft-image-toolbox",
+            "version": "2.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craft-snippets/Craft-image-toolbox.git",
+                "reference": "d686eab63772064aa692955efe119118189eda79"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craft-snippets/Craft-image-toolbox/zipball/d686eab63772064aa692955efe119118189eda79",
+                "reference": "d686eab63772064aa692955efe119118189eda79",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Image toolbox",
+                "handle": "image-toolbox",
+                "developer": "Piotr Pogorzelski",
+                "developerUrl": "http://craftsnippets.com/",
+                "documentationUrl": "http://craftsnippets.com/docs/image-toolbox/",
+                "changelogUrl": "https://github.com/craft-snippets/Craft-image-toolbox/blob/master/CHANGELOG.md",
+                "components": {
+                    "imageToolboxService": "craftsnippets\\imagetoolbox\\services\\ImageToolboxService"
+                },
+                "class": "craftsnippets\\imagetoolbox\\ImageToolbox"
+            },
+            "autoload": {
+                "psr-4": {
+                    "craftsnippets\\imagetoolbox\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Piotr Pogorzelski",
+                    "homepage": "http://craftsnippets.com/"
+                }
+            ],
+            "description": "Image toolbox",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "image toolbox"
+            ],
+            "support": {
+                "docs": "http://craftsnippets.com/docs/image-toolbox/",
+                "issues": "https://github.com/craft-snippets/Craft-image-toolbox/issues",
+                "source": "https://github.com/craft-snippets/Craft-image-toolbox/tree/2.2.3"
+            },
+            "time": "2023-07-18T19:29:36+00:00"
         },
         {
             "name": "creocoder/yii2-nested-sets",
@@ -2197,6 +2368,67 @@
             "time": "2023-04-19T08:25:22+00:00"
         },
         {
+            "name": "mmikkel/cp-field-inspect",
+            "version": "1.4.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mmikkel/CpFieldInspect-Craft.git",
+                "reference": "cab2693eaad03f35192356d8971879e9b0a0e098"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mmikkel/CpFieldInspect-Craft/zipball/cab2693eaad03f35192356d8971879e9b0a0e098",
+                "reference": "cab2693eaad03f35192356d8971879e9b0a0e098",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.7.0|^4.0.0",
+                "php": "^7.2.5|^8.0"
+            },
+            "require-dev": {
+                "craftcms/rector": "dev-main"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "CP Field Inspect",
+                "handle": "cp-field-inspect",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/mmikkel/CpFieldInspect-Craft/master/CHANGELOG.md",
+                "class": "mmikkel\\cpfieldinspect\\CpFieldInspect"
+            },
+            "autoload": {
+                "psr-4": {
+                    "mmikkel\\cpfieldinspect\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mats Mikkel Rummelhoff",
+                    "homepage": "http://mmikkel.no"
+                }
+            ],
+            "description": "Inspect field handles and easily edit field and element source settings",
+            "keywords": [
+                "Craft",
+                "cms",
+                "cp field inspect",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "support": {
+                "docs": "https://github.com/mmikkel/CpFieldInspect-Craft/blob/master/README.md",
+                "issues": "https://github.com/mmikkel/CpFieldInspect-Craft/issues",
+                "source": "https://github.com/mmikkel/CpFieldInspect-Craft/tree/1.4.4"
+            },
+            "time": "2022-05-07T15:24:35+00:00"
+        },
+        {
             "name": "moneyphp/money",
             "version": "v4.3.0",
             "source": {
@@ -2385,6 +2617,182 @@
                 }
             ],
             "time": "2023-10-27T15:25:26+00:00"
+        },
+        {
+            "name": "nystudio107/craft-code-editor",
+            "version": "1.0.16",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nystudio107/craft-code-editor.git",
+                "reference": "ea5d1866d891a09f1c2e5a482d47e555bdf34392"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-code-editor/zipball/ea5d1866d891a09f1c2e5a482d47e555bdf34392",
+                "reference": "ea5d1866d891a09f1c2e5a482d47e555bdf34392",
+                "shasum": ""
+            },
+            "require": {
+                "phpdocumentor/reflection-docblock": "^5.0.0"
+            },
+            "require-dev": {
+                "craftcms/cms": "^3.0.0 || ^4.0.0 || ^5.0.0-alpha.1"
+            },
+            "type": "yii2-extension",
+            "extra": {
+                "bootstrap": "nystudio107\\codeeditor\\CodeEditor"
+            },
+            "autoload": {
+                "psr-4": {
+                    "nystudio107\\codeeditor\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nystudio107",
+                    "homepage": "https://nystudio107.com"
+                }
+            ],
+            "description": "Provides a code editor field with Twig & Craft API autocomplete",
+            "keywords": [
+                "Craft",
+                "Monaco",
+                "cms",
+                "code",
+                "craftcms",
+                "css",
+                "editor",
+                "javascript",
+                "markdown",
+                "twig"
+            ],
+            "support": {
+                "docs": "https://github.com/nystudio107/craft-code-editor/blob/v1/README.md",
+                "issues": "https://github.com/nystudio107/craft-code-editor/issues",
+                "source": "https://github.com/nystudio107/craft-code-editor"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/khalwat",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-12-08T14:39:29+00:00"
+        },
+        {
+            "name": "nystudio107/craft-fastcgicachebust",
+            "version": "4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nystudio107/craft-fastcgicachebust.git",
+                "reference": "ecf170c8c8f5fb3c66e33bca691efb3f83b64f0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nystudio107/craft-fastcgicachebust/zipball/ecf170c8c8f5fb3c66e33bca691efb3f83b64f0a",
+                "reference": "ecf170c8c8f5fb3c66e33bca691efb3f83b64f0a",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "class": "nystudio107\\fastcgicachebust\\FastcgiCacheBust",
+                "handle": "fastcgi-cache-bust",
+                "name": "FastCGI Cache Bust"
+            },
+            "autoload": {
+                "psr-4": {
+                    "nystudio107\\fastcgicachebust\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "nystudio107",
+                    "homepage": "https://nystudio107.com"
+                }
+            ],
+            "description": "Bust the Nginx FastCGI Cache when entries are saved or created.",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "fastcgi cache bust"
+            ],
+            "support": {
+                "docs": "https://nystudio107.com/docs/fastcgi-cache-bust/",
+                "issues": "https://nystudio107.com/plugins/fastcgi-cache-bust/support",
+                "source": "https://github.com/nystudio107/craft-minify"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/khalwat",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-01-12T23:26:21+00:00"
+        },
+        {
+            "name": "oofbar/craft-twig-toolbox",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oof-bar/craft-twig-toolbox.git",
+                "reference": "5723f975f4751aabf75800ec0350b3522667dec8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oof-bar/craft-twig-toolbox/zipball/5723f975f4751aabf75800ec0350b3522667dec8",
+                "reference": "5723f975f4751aabf75800ec0350b3522667dec8",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Twig Toolbox",
+                "handle": "twig-toolbox",
+                "class": "oofbar\\twigtoolbox\\TwigToolbox"
+            },
+            "autoload": {
+                "psr-4": {
+                    "oofbar\\twigtoolbox\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "oof. Studio",
+                    "homepage": "https://oof.studio"
+                }
+            ],
+            "description": "Create your own Twig helpers.",
+            "keywords": [
+                "craftcms",
+                "plugin",
+                "twig"
+            ],
+            "support": {
+                "docs": "https://github.com/oof-bar/craft-twig-toolbox/blob/main/README.md",
+                "email": "hello@oof.studio",
+                "issues": "https://github.com/oof-bar/craft-twig-toolbox/issues?state=open",
+                "source": "https://github.com/oof-bar/craft-twig-toolbox"
+            },
+            "time": "2023-03-24T22:32:44+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -3152,6 +3560,228 @@
             "time": "2021-10-29T13:26:27+00:00"
         },
         {
+            "name": "putyourlightson/craft-blitz-hints",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/putyourlightson/craft-blitz-hints.git",
+                "reference": "5531616033c61a3c44d85f6c219cd59dca89a391"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz-hints/zipball/5531616033c61a3c44d85f6c219cd59dca89a391",
+                "reference": "5531616033c61a3c44d85f6c219cd59dca89a391",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0",
+                "php": "^8.0.2"
+            },
+            "type": "craft-module",
+            "autoload": {
+                "psr-4": {
+                    "putyourlightson\\blitzhints\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "mit"
+            ],
+            "description": "Provides templating performance hints.",
+            "support": {
+                "docs": "https://github.com/putyourlightson/craft-blitz-hints",
+                "issues": "https://github.com/putyourlightson/craft-blitz-hints/issues",
+                "source": "https://github.com/putyourlightson/craft-blitz-hints"
+            },
+            "time": "2023-11-01T11:58:04+00:00"
+        },
+        {
+            "name": "putyourlightson/craft-blitz-recommendations",
+            "version": "2.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/putyourlightson/craft-blitz-recommendations.git",
+                "reference": "25811c24eb08ed57cfa1bb89dec0c2c4141c834c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/putyourlightson/craft-blitz-recommendations/zipball/25811c24eb08ed57cfa1bb89dec0c2c4141c834c",
+                "reference": "25811c24eb08ed57cfa1bb89dec0c2c4141c834c",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0",
+                "php": "^8.0.2",
+                "putyourlightson/craft-blitz-hints": "^1.1.1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Blitz Recommendations",
+                "handle": "blitz-recommendations",
+                "developer": "PutYourLightsOn",
+                "developerUrl": "https://putyourlightson.com/",
+                "documentationUrl": "https://putyourlightson.com/plugins/blitz-recommendations",
+                "changelogUrl": "https://raw.githubusercontent.com/putyourlightson/craft-blitz-recommendations/v2/CHANGELOG.md",
+                "class": "putyourlightson\\blitzrecommendations\\BlitzRecommendations"
+            },
+            "autoload": {
+                "psr-4": {
+                    "putyourlightson\\blitzrecommendations\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "mit"
+            ],
+            "description": "Adds a utility that provides templating performance recommendations.",
+            "support": {
+                "docs": "https://putyourlightson.com/plugins/blitz-recommendations",
+                "issues": "https://github.com/putyourlightson/craft-blitz-recommendations/issues",
+                "source": "https://github.com/putyourlightson/craft-blitz-recommendations"
+            },
+            "time": "2023-11-01T16:06:34+00:00"
+        },
+        {
+            "name": "putyourlightson/craft-elements-panel",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/putyourlightson/craft-elements-panel.git",
+                "reference": "7775c4fb0eb996544c6365863e14a986c0159592"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/putyourlightson/craft-elements-panel/zipball/7775c4fb0eb996544c6365863e14a986c0159592",
+                "reference": "7775c4fb0eb996544c6365863e14a986c0159592",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0",
+                "php": "^8.0.2"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Elements Panel",
+                "handle": "elements-panel",
+                "developer": "PutYourLightsOn",
+                "developerUrl": "https://putyourlightson.com/",
+                "documentationUrl": "https://putyourlightson.com/plugins/elements-panel",
+                "changelogUrl": "https://raw.githubusercontent.com/putyourlightson/craft-elements-panel/v2/CHANGELOG.md",
+                "class": "putyourlightson\\elementspanel\\ElementsPanel"
+            },
+            "autoload": {
+                "psr-4": {
+                    "putyourlightson\\elementspanel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "mit"
+            ],
+            "description": "Adds an Elements and an Eager-Loading panel to the debug toolbar.",
+            "support": {
+                "docs": "https://putyourlightson.com/plugins/elements-panel",
+                "issues": "https://github.com/putyourlightson/craft-elements-panel/issues",
+                "source": "https://github.com/putyourlightson/craft-elements-panel"
+            },
+            "time": "2022-05-04T18:44:34+00:00"
+        },
+        {
+            "name": "putyourlightson/craft-sprig",
+            "version": "2.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/putyourlightson/craft-sprig.git",
+                "reference": "217f2b94c412f48c6648259390dc8bfa69619f85"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sprig/zipball/217f2b94c412f48c6648259390dc8bfa69619f85",
+                "reference": "217f2b94c412f48c6648259390dc8bfa69619f85",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0",
+                "nystudio107/craft-code-editor": "^1.0.0",
+                "php": "^8.0.2",
+                "putyourlightson/craft-sprig-core": "^2.6.3"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Sprig",
+                "handle": "sprig",
+                "developer": "PutYourLightsOn",
+                "developerUrl": "https://putyourlightson.com/",
+                "documentationUrl": "https://putyourlightson.com/plugins/sprig",
+                "changelogUrl": "https://raw.githubusercontent.com/putyourlightson/craft-sprig/v2/CHANGELOG.md",
+                "class": "putyourlightson\\sprig\\plugin\\Sprig"
+            },
+            "autoload": {
+                "psr-4": {
+                    "putyourlightson\\sprig\\plugin\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "mit"
+            ],
+            "description": "A reactive Twig component framework for Craft.",
+            "support": {
+                "docs": "https://putyourlightson.com/plugins/sprig",
+                "issues": "https://github.com/putyourlightson/craft-sprig/issues",
+                "source": "https://github.com/putyourlightson/craft-sprig"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/bencroker",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-09-29T16:10:34+00:00"
+        },
+        {
+            "name": "putyourlightson/craft-sprig-core",
+            "version": "2.6.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/putyourlightson/craft-sprig-core.git",
+                "reference": "76b1d813bcd29bcad667453f8a3d3e4164b8f043"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/putyourlightson/craft-sprig-core/zipball/76b1d813bcd29bcad667453f8a3d3e4164b8f043",
+                "reference": "76b1d813bcd29bcad667453f8a3d3e4164b8f043",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0",
+                "php": "^8.0.2"
+            },
+            "require-dev": {
+                "codeception/codeception": "^4.1.29",
+                "codeception/module-asserts": "^1.3.1",
+                "codeception/module-yii2": "^1.1.5",
+                "vlucas/phpdotenv": "^5.4.1"
+            },
+            "type": "craft-module",
+            "autoload": {
+                "psr-4": {
+                    "putyourlightson\\sprig\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "mit"
+            ],
+            "description": "A reactive Twig component framework for Craft.",
+            "support": {
+                "docs": "https://github.com/putyourlightson/craft-sprig-core",
+                "issues": "https://github.com/putyourlightson/craft-sprig-core/issues",
+                "source": "https://github.com/putyourlightson/craft-sprig-core"
+            },
+            "time": "2023-12-16T01:18:51+00:00"
+        },
+        {
             "name": "ralouphie/getallheaders",
             "version": "3.0.3",
             "source": {
@@ -3329,6 +3959,95 @@
                 }
             ],
             "time": "2023-11-23T14:11:29+00:00"
+        },
+        {
+            "name": "sebastianlenz/craft-utils",
+            "version": "3.0.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastian-lenz/craft-utils.git",
+                "reference": "3abd09bd950dda67926f537b0d9b4b922c205c4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastian-lenz/craft-utils/zipball/3abd09bd950dda67926f537b0d9b4b922c205c4d",
+                "reference": "3abd09bd950dda67926f537b0d9b4b922c205c4d",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "lenz\\craft\\utils\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A collection of utility classes for Craft CMS development",
+            "support": {
+                "source": "https://github.com/sebastian-lenz/craft-utils/tree/3.0.12"
+            },
+            "time": "2023-11-29T19:19:14+00:00"
+        },
+        {
+            "name": "sebastianlenz/linkfield",
+            "version": "2.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastian-lenz/craft-linkfield.git",
+                "reference": "b82fb1a8f94861f08c8b119758606a2a2172aef9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastian-lenz/craft-linkfield/zipball/b82fb1a8f94861f08c8b119758606a2a2172aef9",
+                "reference": "b82fb1a8f94861f08c8b119758606a2a2172aef9",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0",
+                "php": "^8.0",
+                "sebastianlenz/craft-utils": "^3.0.5"
+            },
+            "require-dev": {
+                "craftcms/feed-me": "^5.0",
+                "craftcms/phpstan": "dev-main",
+                "phpstan/phpstan": "^1.8.5",
+                "phpunit/phpunit": "^7.5 || ^8.0",
+                "verbb/super-table": "^3.0.5"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "typedlinkfield",
+                "name": "Typed link field",
+                "developer": "Sebastian Lenz",
+                "developerUrl": "https://github.com/sebastian-lenz/"
+            },
+            "autoload": {
+                "psr-4": {
+                    "lenz\\linkfield\\": "src/"
+                },
+                "classmap": [
+                    "legacy"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Craft field type for selecting links",
+            "support": {
+                "issues": "https://github.com/sebastian-lenz/craft-linkfield/issues",
+                "source": "https://github.com/sebastian-lenz/craft-linkfield/tree/2.1.5"
+            },
+            "time": "2022-11-29T09:36:26+00:00"
         },
         {
             "name": "seld/cli-prompt",
@@ -3557,6 +4276,194 @@
                 "source": "https://github.com/Seldaek/signal-handler/tree/2.0.2"
             },
             "time": "2023-09-03T09:24:00+00:00"
+        },
+        {
+            "name": "spicyweb/craft-neo",
+            "version": "3.9.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spicywebau/craft-neo.git",
+                "reference": "9faf98cc1e26dd90f2076d9f8bd56998d62377d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/9faf98cc1e26dd90f2076d9f8bd56998d62377d9",
+                "reference": "9faf98cc1e26dd90f2076d9f8bd56998d62377d9",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.5.0",
+                "php": "^8.0.2"
+            },
+            "require-dev": {
+                "codeception/codeception": "^4.0",
+                "codeception/module-asserts": "*",
+                "codeception/module-phpbrowser": "^1.0.2",
+                "codeception/module-yii2": "^1.1.5",
+                "craftcms/ecs": "dev-main",
+                "craftcms/rector": "dev-main",
+                "vlucas/phpdotenv": "^3.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "neo",
+                "name": "Neo",
+                "schemaVersion": "3.6.2",
+                "class": "benf\\neo\\Plugin",
+                "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/3.x/CHANGELOG.md",
+                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/3.9.10.zip"
+            },
+            "autoload": {
+                "psr-4": {
+                    "benf\\neo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Spicy Web",
+                    "homepage": "https://github.com/spicywebau"
+                }
+            ],
+            "description": "A Matrix-like field type that uses existing fields",
+            "keywords": [
+                "Neo",
+                "cms",
+                "craftcms",
+                "field",
+                "matrix",
+                "plugin"
+            ],
+            "support": {
+                "docs": "https://github.com/spicywebau/craft-neo/blob/3.9.10/README.md",
+                "issues": "https://github.com/spicywebau/craft-neo/issues",
+                "rss": "https://github.com/spicywebau/craft-neo/commits/3.x.atom",
+                "source": "https://github.com/spicywebau/craft-neo"
+            },
+            "time": "2023-12-03T12:31:08+00:00"
+        },
+        {
+            "name": "spicyweb/craft-quick-field",
+            "version": "2.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spicywebau/craft-quick-field.git",
+                "reference": "569c030562f6fa00b650858a52639a3bb6932f0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spicywebau/craft-quick-field/zipball/569c030562f6fa00b650858a52639a3bb6932f0a",
+                "reference": "569c030562f6fa00b650858a52639a3bb6932f0a",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.1.0",
+                "php": "^8.0.2"
+            },
+            "require-dev": {
+                "craftcms/ecs": "dev-main",
+                "craftcms/rector": "dev-main"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "quick-field",
+                "name": "Quick Field",
+                "schemaVersion": "1.0.0",
+                "class": "spicyweb\\quickfield\\Plugin",
+                "changelogUrl": "https://github.com/spicywebau/craft-quick-field/blob/2.x/CHANGELOG.md",
+                "downloadUrl": "https://github.com/spicywebau/craft-quick-field/archive/refs/tags/2.0.7.zip"
+            },
+            "autoload": {
+                "psr-4": {
+                    "spicyweb\\quickfield\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Spicy Web",
+                    "homepage": "https://spicyweb.com.au/"
+                }
+            ],
+            "description": "Create Craft CMS fields on the fly while designing field layouts",
+            "keywords": [
+                "cms",
+                "craftcms",
+                "plugin"
+            ],
+            "support": {
+                "docs": "https://github.com/spicywebau/craft-quick-field/blob/2.0.7/README.md",
+                "issues": "https://github.com/spicywebau/craft-quick-field/issues",
+                "rss": "https://github.com/spicywebau/craft-quick-field/commits/2.x.atom",
+                "source": "https://github.com/spicywebau/craft-quick-field"
+            },
+            "time": "2023-10-16T09:28:05+00:00"
+        },
+        {
+            "name": "studioespresso/craft-dumper",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/studioespresso/craft-dumper.git",
+                "reference": "35155b80c813f96ee5fa377ada4726c083ce9d3d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/studioespresso/craft-dumper/zipball/35155b80c813f96ee5fa377ada4726c083ce9d3d",
+                "reference": "35155b80c813f96ee5fa377ada4726c083ce9d3d",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0-RC1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Dumper",
+                "handle": "dumper",
+                "schemaVersion": "1.0.0",
+                "hasCpSettings": false,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/studioespresso/craft3-dumper/master/CHANGELOG.md",
+                "class": "studioespresso\\craftdumper\\CraftDumper"
+            },
+            "autoload": {
+                "files": [
+                    "src/helper.php"
+                ],
+                "psr-4": {
+                    "studioespresso\\craftdumper\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Studio Espresso",
+                    "homepage": "https://studioespresso.dev"
+                }
+            ],
+            "description": "Bringing larapack/dd to Craft CMS",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "dumper"
+            ],
+            "support": {
+                "docs": "https://github.com/studioespresso/craft3-dumper/blob/master/README.md",
+                "issues": "https://github.com/studioespresso/craft3-dumper/issues",
+                "source": "https://github.com/studioespresso/craft-dumper/tree/3.0.1"
+            },
+            "time": "2022-05-24T17:49:13+00:00"
         },
         {
             "name": "symfony/console",
@@ -5656,6 +6563,255 @@
                 }
             ],
             "time": "2022-09-28T08:42:51+00:00"
+        },
+        {
+            "name": "verbb/base",
+            "version": "2.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/verbb-base.git",
+                "reference": "fb33550d8bc1c879f3e114ce00ee70d624014b9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/fb33550d8bc1c879f3e114ce00ee70d624014b9e",
+                "reference": "fb33550d8bc1c879f3e114ce00ee70d624014b9e",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0",
+                "php": "^8.0.2"
+            },
+            "type": "yii-module",
+            "autoload": {
+                "psr-4": {
+                    "verbb\\base\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "Common utilities and building-blocks for Verbb plugins for Craft CMS.",
+            "support": {
+                "docs": "https://github.com/verbb/verbb-base",
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/verbb-base/issues?state=open",
+                "rss": "https://github.com/verbb/verbb-base/commits/v2.atom",
+                "source": "https://github.com/verbb/verbb-base"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/verbb",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-09-19T22:50:02+00:00"
+        },
+        {
+            "name": "verbb/buttonbox",
+            "version": "4.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/buttonbox.git",
+                "reference": "84a16a035553248d3c50a5e722458f1f63ea6b22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/buttonbox/zipball/84a16a035553248d3c50a5e722458f1f63ea6b22",
+                "reference": "84a16a035553248d3c50a5e722458f1f63ea6b22",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.4.0",
+                "php": "^8.0.2",
+                "verbb/base": "^2.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Button Box",
+                "handle": "buttonbox",
+                "documentationUrl": "https://github.com/verbb/buttonbox",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/buttonbox/craft-3/CHANGELOG.md",
+                "class": "verbb\\buttonbox\\ButtonBox"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\buttonbox\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                },
+                {
+                    "name": "Supercool",
+                    "homepage": "http://supercooldesign.co.uk"
+                }
+            ],
+            "description": "A collection of utility field types for Craft",
+            "keywords": [
+                "Craft",
+                "buttonbox",
+                "cms",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "support": {
+                "docs": "https://github.com/verbb/buttonbox",
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/buttonbox/issues?state=open",
+                "rss": "https://github.com/verbb/buttonbox/commits/v2.atom",
+                "source": "https://github.com/verbb/buttonbox"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/verbb",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-03-08T23:46:59+00:00"
+        },
+        {
+            "name": "verbb/field-manager",
+            "version": "3.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/field-manager.git",
+                "reference": "54b798b52cf0b0d0a877e5d111364e21e7df817e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/field-manager/zipball/54b798b52cf0b0d0a877e5d111364e21e7df817e",
+                "reference": "54b798b52cf0b0d0a877e5d111364e21e7df817e",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0",
+                "php": "^8.0.2",
+                "verbb/base": "^2.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Field Manager",
+                "handle": "field-manager",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/field-manager/craft-4/CHANGELOG.md",
+                "class": "verbb\\fieldmanager\\FieldManager"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\fieldmanager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "Manage your fields and field groups with ease.",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "field manager"
+            ],
+            "support": {
+                "docs": "https://github.com/verbb/field-manager",
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/field-manager/issues?state=open",
+                "rss": "https://github.com/verbb/field-manager/commits/v2.atom",
+                "source": "https://github.com/verbb/field-manager"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/verbb",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-10-25T00:31:21+00:00"
+        },
+        {
+            "name": "verbb/super-table",
+            "version": "3.0.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/verbb/super-table.git",
+                "reference": "ba5d7b0ddbd2597c156a0e9913890d391ba54040"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/super-table/zipball/ba5d7b0ddbd2597c156a0e9913890d391ba54040",
+                "reference": "ba5d7b0ddbd2597c156a0e9913890d391ba54040",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^4.0.0",
+                "php": "^8.0.2",
+                "verbb/base": "^2.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Super Table",
+                "handle": "super-table",
+                "description": "Super-charge your Craft workflow with Super Table. Use it to group fields together or build complex Matrix-in-Matrix solutions.",
+                "documentationUrl": "https://github.com/verbb/super-table",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/super-table/craft-4/CHANGELOG.md",
+                "class": "verbb\\supertable\\SuperTable"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\supertable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "Super-charge your content builders and create nested Matrix fields.",
+            "keywords": [
+                "Craft",
+                "cms",
+                "craft-plugin",
+                "craftcms",
+                "super table"
+            ],
+            "support": {
+                "docs": "https://github.com/verbb/super-table",
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/super-table/issues?state=open",
+                "rss": "https://github.com/verbb/super-table/commits/v2.atom",
+                "source": "https://github.com/verbb/super-table"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/verbb",
+                    "type": "github"
+                }
+            ],
+            "time": "2023-10-05T04:08:28+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
