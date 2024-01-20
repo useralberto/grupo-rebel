@@ -1,0 +1,25 @@
+{# {% if enableAnimations %} #}
+{# <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> #}
+{# {% endif %} #}
+
+{% set path_base = '/assets/' %}
+
+{% include 'quarks/_loadAssets' with {
+  assets: [
+    {
+      path: 'https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js',
+      type: 'js',
+      externalLink: true
+    },
+    {
+      type: 'js',
+      path: path_base ~ 'js/bootstrap.js',
+      async: true
+    },
+    {
+      type: 'js',
+      path: path_base ~ 'js/app.js',
+      async: true
+    }
+  ]
+} only %}

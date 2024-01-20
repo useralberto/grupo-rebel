@@ -1,0 +1,13 @@
+{% import '_macros/setLoadAssets' as _set %}
+
+{% set assets = assets ?? null %}
+
+{% if assets %}
+  {% for asset in assets %}
+    {% set externalLink = asset.externalLink ?? false %}
+    {% set checkFiles = externalLink ? true : checkFiles(asset.path ?? '') %}
+    {% if checkFiles %}
+      {{ _set.assetFields(asset) }}
+    {% endif %}
+  {% endfor %}
+{% endif %}

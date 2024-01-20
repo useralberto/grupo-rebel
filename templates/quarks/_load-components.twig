@@ -1,0 +1,44 @@
+{% set mtcc = mtcc ?? false %}
+{% set components = components ?? null %}
+{% if components %}
+  {% for _block in components %}
+    {% set level = mtcc ? true : _block.level == 1 ? true : false %}
+    {% if not mtcc %}
+      {% do _block.useMemoized(components) %}
+    {% endif %}
+
+    {% if level %}
+      {% if not mtcc %}
+        {% set mp = getMP(_block.children.collect() ?? null) %}
+      {% endif %}
+
+      {% set type = _block.type %}
+      {% set baseClass = type %}
+
+      {% set group = 'component' %}
+
+      <section data-component-handle="{{ type }}" class="{{ mp ?? null }}">
+        {% include "components/#{type}/" %}
+      </section>
+
+      {% include 'quarks/_loadAssets' with {
+        assets: [
+          {
+            type: 'css',
+            path: pathElements|format(
+              'css',
+              "#{group}s",
+              "#{type}.#{group}.css"
+            ),
+            preload: true
+          },
+          {
+            type: 'js',
+            path: pathElements|format('js', "#{group}s", "#{type}.#{group}.js"),
+            async: true
+          }
+        ]
+      } only %}
+    {% endif %}
+  {% endfor %}
+{% endif %}

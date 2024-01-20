@@ -1,0 +1,16 @@
+{# Set all variables globales #}
+{# {% set megaMenu = craft.entries().section('menu').level(1).limit(7).collect() %} #}
+
+{# {% set general = craft.globalSets().handle('general').with(['fieldImage']).one() #}
+{# ?? null #}
+{# %} #}
+
+{# {% set logoGeneral = general.fieldImage[0] ?? null %} #}
+
+{# Some come globals ... #}
+{% set pathBaseAssets = '/assets/' %}
+{% set pathElements = "#{pathBaseAssets}%s/%s/%s" %}
+
+{# {% do sprig.setRegisterScript(false) %} #}
+
+{%- block htmlPage -%}{% endblock %}

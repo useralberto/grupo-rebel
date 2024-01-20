@@ -1,0 +1,35 @@
+{% macro assetFields(asset) %}
+  {% set propitiers = {
+    css: {
+      prop: 'preload',
+      attrs: {
+        rel: 'preload',
+        as: 'style',
+        onload: "this.onload=null;this.rel='stylesheet'"
+      }
+    },
+    js: {
+      prop: 'async',
+      attrs: {
+        async: true
+      }
+    }
+  } %}
+
+  {% set attrs = asset.customAttrs ?? null %}
+
+  {% if not attrs %}
+    {% set attrs = asset[propitiers[asset.type].prop] ?? false
+      ? propitiers[asset.type].attrs
+      : {}
+    %}
+  {% endif %}
+
+  {% if asset.type == 'css' %}
+    {% css asset.path with attrs %}
+  {% endif %}
+
+  {% if asset.type == 'js' %}
+    {% js asset.path with attrs %}
+  {% endif %}
+{% endmacro %}
