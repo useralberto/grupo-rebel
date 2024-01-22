@@ -1,10 +1,69 @@
 {% extends '_layouts' %}
 
-{% block main %}
+{% block content %}
+  <style>
+    body { font-family: 'Arial', sans-serif; margin: 0; display: flex;
+    align-items: center; justify-content: center; height: 100vh;
+    position:relative;
+
+    } body:before { position:absolute; left:0%; top:0%; width:100%; height:100%;
+    content:""; z-index:-1; background-color: #e5e5f7; opacity: 0.8;
+    background-image: linear-gradient(#000000 1px, transparent 1px),
+    linear-gradient(to right, #000000 1px, #e5e5f7 1px); background-size: 20px
+    20px;
+
+    }
+
+    .container { max-width: 800px; padding: 20px; background-color:#fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+
+    header { background-color: #000000; color: #fff; padding: 10px; text-align:
+    center; }
+
+    section { margin-bottom: 20px; }
+
+    a { color: #3498db; text-decoration: none; font-weight: bold; }
+
+    a:hover { text-decoration: underline; }
+  </style>
+
   <div class="container">
-    Lorem minima quisquam suscipit eum numquam Commodi blanditiis iure eligendi
-    suscipit atque Ipsum corrupti ea qui harum molestias, reiciendis! Molestiae
-    voluptatum cum ex ut magnam? Expedita eaque eum ex amet.
+    <header><h1>Bienvenido al Proyecto OnDemandLoading</h1></header>
+
+    <section>
+      <p>
+        Este proyecto utiliza el template OnDemandLoading para simplificar el
+        proceso de instalación al iniciar un proyecto de Craft desde cero.
+        Diseñado especialmente para proyectos de la Brand Industry.
+      </p>
+    </section>
+
+    <section>
+      <h2>Documentación</h2>
+      <p>
+        Consulta la documentación detallada para obtener información sobre la
+        estructura del proyecto, requisitos y más:
+      </p>
+      <a href="https://www.notion.so/brandindustry/OnDemandLoading-Template-9d6bb16b67094842b1a32b2de89f018e?pvs=4"
+        target="_blank"
+        rel="noopener noreferrer">
+        Documentación en Notion
+      </a>
+    </section>
+
+    <section>
+      <h2>Requisitos</h2>
+      <ul>
+        <li>Docker</li>
+        <li>DDEV instalado</li>
+      </ul>
+      <p>
+        Al clonar y adaptar el repositorio, revisa los archivos `package.json` y
+        `composer.json` para ajustar bibliotecas y complementos según sea
+        necesario.
+      </p>
+      <p>Modifica el archivo de configuración de DDEV según tus necesidades.</p>
+    </section>
   </div>
 {% endblock %}
 
