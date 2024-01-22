@@ -26,4 +26,5 @@ web/bucket
 #Compilation
 /webpack-settings/*
 !/webpack-settings/builders-config/
+!/webpack-settings/pages.js
 

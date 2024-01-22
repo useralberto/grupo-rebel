@@ -13,7 +13,6 @@
     "compress": "bread-compressor -s web/css/*.css web/js/*.js",
     "ucl": "node ./webpack-settings/builders-config/update-components-list.js",
     "upal": "node ./webpack-settings/builders-config/update-partials-list.js",
-    "upl": "node ./webpack-settings/builders-config/update-pages-list.js",
     "uall": "node ./webpack-settings/builders-config/updateListScript.js"
   },
   "keywords": [],
