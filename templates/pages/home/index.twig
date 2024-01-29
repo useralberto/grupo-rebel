@@ -1,0 +1,8 @@
+{% extends '_layouts' %}
+
+{% block content %}
+  {# Example of how components are loaded on a page; we must take into account the Neo element handle. #}
+  {% include 'quarks/_load-components' with {
+    components: entry.components.collect()
+  } %}
+{% endblock %}
