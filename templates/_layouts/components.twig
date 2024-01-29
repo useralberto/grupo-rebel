@@ -1,0 +1,24 @@
+<section data-component-handle="{{ type }}" class="{{ mp ?? null }}">
+  {% block component %}
+    <div class="container">
+      <p>Handle: {{ type }}</p>
+      <p>Path: "/components/{{ type }}/index.twig"</p>
+      <p>Margin and Padding: "{{ mp }}"</p>
+    </div>
+  {% endblock %}
+</section>
+
+{% include 'quarks/_loadAssets' with {
+  assets: [
+    {
+      type: 'css',
+      path: pathElements|format('css', "#{group}s", "#{type}.#{group}.css"),
+      preload: true
+    },
+    {
+      type: 'js',
+      path: pathElements|format('js', "#{group}s", "#{type}.#{group}.js"),
+      async: true
+    }
+  ]
+} only %}

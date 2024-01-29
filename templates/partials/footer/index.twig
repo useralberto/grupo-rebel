@@ -1,16 +1,7 @@
-{% include 'quarks/_loadAssets' with {
-  assets: [
-    {
-      type: 'css',
-      path: pathElements|format('css', 'partials', 'footer.partials.css'),
-      preload: true
-    },
-    {
-      type: 'js',
-      path: pathElements|format('js', 'partials', 'footer.partials.js'),
-      async: true
-    }
-  ]
-} only %}
+{% set elementPartial = 'header' %}
 
-<footer></footer>
+{% extends '_layouts/partials' %}
+
+{% block partial %}
+  <footer></footer>
+{% endblock %}
