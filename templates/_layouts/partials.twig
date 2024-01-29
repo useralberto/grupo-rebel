@@ -1,27 +1,29 @@
-{% set elementPartial = elementPartial ?? null %}
-{% if elementPartial %}
-  {% include 'quarks/_loadAssets' with {
-    assets: [
-      {
-        type: 'css',
-        path: pathElements|format(
-          'css',
-          'partials',
-          "#{elementPartial}.partials.css"
-        ),
-        preload: true
-      },
-      {
-        type: 'js',
-        path: pathElements|format(
-          'js',
-          'partials',
-          "#{elementPartial}.partials.js"
-        ),
-        async: true
-      }
-    ]
-  } only %}
-{% endif %}
+{% block loadAssetsPartials %}
+  {% set elementPartial = elementPartial ?? null %}
+  {% if elementPartial %}
+    {% include 'quarks/_loadAssets' with {
+      assets: [
+        {
+          type: 'css',
+          path: pathElements|format(
+            'css',
+            'partials',
+            "#{elementPartial}.partials.css"
+          ),
+          preload: true
+        },
+        {
+          type: 'js',
+          path: pathElements|format(
+            'js',
+            'partials',
+            "#{elementPartial}.partials.js"
+          ),
+          async: true
+        }
+      ]
+    } only %}
+  {% endif %}
+{% endblock %}
 
 {% block partial %}{% endblock %}

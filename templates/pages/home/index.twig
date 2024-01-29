@@ -2,7 +2,9 @@
 
 {% block content %}
   {# Example of how components are loaded on a page; we must take into account the Neo element handle. #}
+  {# If the element is a native matrix, mtcc should be set to true; however, in the case of a Neo element, it can be set to false or omitted when passing the parameter in the include. #}
   {% include 'quarks/_load-components' with {
-    components: entry.components.collect()
+    components: entry.components.collect(),
+    mtcc: false
   } %}
 {% endblock %}
