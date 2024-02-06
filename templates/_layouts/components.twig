@@ -2,13 +2,14 @@
 {% set mp = mp ?? null %}
 {% set group = group ?? null %}
 {% set baseClass = baseClass ?? null %}
+{% set constainerFluid = constainerFluid ?? false %}
 
 {% block customComponent %}
   <section data-component-handle="{{ type }}" class="{{ mp }}">
     {% block componentBody %}
       {{ baseClass ? ("<div class=#{baseClass}>")|raw : null }}
       {% block componentContainer %}
-        <div class="container">
+        <div class="{{ constainerFluid ? 'container-fluid' : 'container' }}">
           {% block componentContent %}
             {% if type %}
               <p>Handle: {{ type }}</p>
