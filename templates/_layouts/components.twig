@@ -3,30 +3,36 @@
 {% set group = group ?? null %}
 {% set baseClass = baseClass ?? null %}
 
-<section data-component-handle="{{ type }}" class="{{ mp }}">
-  {% block component %}
-    {{ baseClass ? ("<div class=#{baseClass}>")|raw : null }}
-    <div class="container">
-      {% block container %}
-        {% if type %}
-          <p>Handle: {{ type }}</p>
-          <p>Path: "/components/{{ type }}/index.twig"</p>
-          <p>Margin and Padding: "{{ mp }}"</p>
-        {% else %}
-          <style>
-            code { background-color: #eee; border-radius: 3px; font-family:
-            courier, monospace; padding: 0 3px; }
-          </style>
-          <p>
-            Information is missing to locate the component correctly, you can
-            locate the component in the following path <code>/components/</code>
-          </p>
-        {% endif %}
+{% block customComponent %}
+  <section data-component-handle="{{ type }}" class="{{ mp }}">
+    {% block componentBody %}
+      {{ baseClass ? ("<div class=#{baseClass}>")|raw : null }}
+      {% block componentContainer %}
+        <div class="container">
+          {% block componentContent %}
+            {% if type %}
+              <p>Handle: {{ type }}</p>
+              <p>Path: "/components/{{ type }}/index.twig"</p>
+              <p>Margin and Padding: "{{ mp }}"</p>
+            {% else %}
+              <style>
+                code { background-color: #eee; border-radius: 3px; font-family:
+                courier, monospace; padding: 0 3px; }
+              </style>
+              <p>
+                Information is missing to locate the component correctly, you
+                can locate the component in the following path <code>
+                  /components/
+                </code>
+              </p>
+            {% endif %}
+          {% endblock %}
+        </div>
       {% endblock %}
-    </div>
-    {{ baseClass ? '</div>'|raw : null }}
-  {% endblock %}
-</section>
+      {{ baseClass ? '</div>'|raw : null }}
+    {% endblock %}
+  </section>
+{% endblock %}
 
 {% block loadAssetsComponents %}
   {% if type and group %}
