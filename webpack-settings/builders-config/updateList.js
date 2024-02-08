@@ -66,4 +66,4 @@ const updateList = (listFile, baseDirectory, sourceDirectory, fileType) => {
   }
 };
 
-module.exports = { updateList };
+module.exports = updateList;

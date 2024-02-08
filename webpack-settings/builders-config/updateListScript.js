@@ -1,4 +1,4 @@
-const { updateList } = require("./updateList");
+const updateList = require("./updateList");
 updateList(
   "../components.js",
   __dirname,
