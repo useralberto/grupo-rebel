@@ -2,7 +2,7 @@
   craft.entries.section('events').with(['poster']).orderBy(
     'dateOfEvent desc'
   ).limit(
-    3
+    6
   )
 %}
 
@@ -12,10 +12,13 @@
 
 <div class="container">
   <div id="eventsApp">
-    {% for event in events %}
-      <div class="row">
+    <ul class="p-0 m-0 list-not-bullets"><li></li></ul>
+    <div class="row gy-4 mt-4">
+      {% set nowDate = now|date('Y-m-d') %}
+      {% for event in events %}
         <div class="col-12 col-md-6 col-lg-4">
           {% include 'partials/cardEvent/' with {
+            nowDate: nowDate,
             location: event.eventLocation,
             poster: event.poster[0] ?? null,
             url: event.url,
@@ -23,8 +26,9 @@
             tags: event.tags.collect() ?? []
           } %}
         </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
+
     {% include 'partials/bodyEvents/utils/pagination' %}
   </div>
 </div>

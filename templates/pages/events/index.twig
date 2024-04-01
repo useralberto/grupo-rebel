@@ -3,7 +3,15 @@
 {% block content %}
   {% include 'quarks/_mastHead' %}
 
-  {{ sprig('partials/bodyEvents/') }}
+  {{
+    sprig(
+      'partials/bodyEvents/',
+      {
+        pathElements: pathElements,
+        statusEvents: statusEvents
+      }
+    )
+  }}
 
   {% include 'quarks/_load-components' with {
     components: entry.components.collect() ?? [],

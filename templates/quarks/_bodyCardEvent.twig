@@ -1,0 +1,60 @@
+{% if poster %}
+  {% include 'quarks/_imageTransforms' with {
+    img: poster,
+    setClass: 'img-absolute',
+    defualtImage: {
+      height: 700
+    },
+    transforms: {
+      '(min-width: 1200px)': {
+        height: 800
+      },
+      '(min-width: 992px)': {
+        height: 780
+      },
+      '(min-width: 576px)': {
+        height: 600
+      },
+      '': {
+        height: 500
+      }
+    }
+  } only %}
+{% endif %}
+
+{% set status = '' %}
+{% if eventDate > nowDate %}
+  {% set status = 'confirmed' %}
+{% elseif nowDate > eventDate %}
+  {% set status = 'finished' %}
+{% elseif nowDate == eventDate %}
+  {% set status = 'isNow' %}
+{% endif %}
+
+{% set dataStatus = statusEvents[status] ?? {} %}
+{% if dataStatus %}
+  <p class="cardEvent__status m-0 px-3 py-1"
+    style="--bgColor:{{ dataStatus.color }};">
+    {{ dataStatus.label|upper }}
+  </p>
+{% endif %}
+
+{% if location %}
+  <p class="cardEvent__title mb-0">{{ location }}</p>
+{% endif %}
+{% if eventDate %}
+  <p class="cardEvent__date mt-0 mb-2">
+    {{ eventDate|date('l | j F')|capitalize }}
+  </p>
+{% endif %}
+
+{% if tags %}
+  <ul class="m-0 p-0 d-flex align-items-center mb-2 flex-wrapper cardEvent__tags">
+    {% for tag in tags %}
+      <li class="cardEvent__tags--item list-not-bullets px-2 py-1 me-2"
+        style="--bgTag:{{ tag.fieldColor }};--fontColor:{{ tag.fieldColor2 }};">
+        {{ tag.title }}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}

@@ -19,4 +19,5 @@
   color: var(--white);
   text-transform: uppercase;
   font-size: 17px;
+  cursor: pointer;
 }

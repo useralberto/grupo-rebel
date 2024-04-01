@@ -11,8 +11,8 @@
 scripts/.env.sh
 
 #Assets
-web/uploads/
-web/bucket/
+web/uploads
+web/bucket
 
 #Config
 /config/project

@@ -24,9 +24,11 @@
   {% if (events|length) > 0 %}
     <div class="swiper recentEventsComponent">
       <div class="swiper-wrapper mb-5 py-5">
+        {% set nowDate = now|date('Y-m-d') %}
         {% for event in events %}
           <div class="swiper-slide">
             {% include 'partials/cardEvent/' with {
+              nowDate: nowDate,
               location: event.eventLocation,
               poster: event.poster[0] ?? null,
               url: event.url,
