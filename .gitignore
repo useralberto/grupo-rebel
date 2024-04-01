@@ -12,7 +12,7 @@ scripts/.env.sh
 
 #Assets
 web/uploads
-web/bucket
+web/buckets
 
 #Config
 /config/project
