@@ -1,8 +1,23 @@
+{% set dateOfEvent = '' %}
+{% set optionsBtn = ['all', 'next', 'past'] %}
+{% set section = section ?? 'all' %}
+{% set section = section in optionsBtn ? section : 'all' %}
+
+{% if section == 'next' %}
+  {% set dateOfEvent = ">= #{now|date('Y-m-d')}" %}
+{% endif %}
+
+{% if section == 'past' %}
+  {% set dateOfEvent = "< #{now|date('Y-m-d')}" %}
+{% endif %}
+
 {% set entries =
   craft.entries.section('events').with(['poster']).orderBy(
     'dateOfEvent desc'
   ).limit(
     6
+  ).dateOfEvent(
+    dateOfEvent
   )
 %}
 
@@ -10,10 +25,34 @@
 {% set pageInfo = sprig.paginate(entries, page) %}
 {% set events = pageInfo.pageResults %}
 
+{% set labelsOptionsBtn = {
+  all: 'Todos',
+  next: 'Próximos',
+  past: 'Finalizados'
+} %}
+
 <div class="container">
-  <div id="eventsApp">
-    <ul class="p-0 m-0 list-not-bullets"><li></li></ul>
-    <div class="row gy-4 mt-4">
+  <div id="eventsApp" class="py-4">
+    <ul class="p-0 m-0 my-5 pb-2 d-flex justify-content-center flex-wrap align-items-center list-not-bullets">
+      <li class="me-3" style="font-size:25px;"><strong>Filtros:</strong></li>
+      {% for btn in optionsBtn %}
+        <li class="me-3">
+          <button sprig
+            s-select="#eventsApp"
+            s-target="#eventsApp"
+            s-swap="outerHTML"
+            s-val:section="{{ btn }}"
+            class="btn btn-outline-black px-4 py-1 {{
+            section == btn
+              ? 'active'
+            }}">
+            {{ labelsOptionsBtn[btn] }}
+          </button>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <div class="row gy-4">
       {% set nowDate = now|date('Y-m-d') %}
       {% for event in events %}
         <div class="col-12 col-md-6 col-lg-4">

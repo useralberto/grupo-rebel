@@ -18,6 +18,7 @@
 }
 
 .btn-outline-black {
+  --bs-btn-active-bg: var(--dark);
   --bs-btn-color: var(--dark);
   --bs-btn-bg: transparent;
   --bs-btn-border-width: 1px;
@@ -25,4 +26,5 @@
   --bs-btn-hover-border-color: var(--dark);
   --bs-btn-hover-bg: var(--dark);
   --bs-btn-hover-color: var(--white);
+  --bs-btn-active-color: var(--white);
 }

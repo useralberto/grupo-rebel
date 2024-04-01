@@ -26,7 +26,7 @@
     );
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
 
-    opacity: 0.8;
+    opacity: 0.9;
     mix-blend-mode: multiply;
     z-index: -1;
   }
@@ -41,6 +41,9 @@
     a:hover {
       color: var(--white);
     }
+  }
+  &__title {
+    font-size: 45px;
   }
   &__description {
     font-size: 18px;
