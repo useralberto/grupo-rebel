@@ -1,0 +1,15 @@
+.gridImageAndText {
+  overflow: hidden;
+  &__contentImage {
+    position: relative;
+    min-height: 450px;
+  }
+  &__description {
+    font-size: 18px;
+    h4 {
+      margin-bottom: 0.5rem;
+      font-size: 25px;
+      font-weight: 600;
+    }
+  }
+}

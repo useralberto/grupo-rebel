@@ -1,7 +1,79 @@
-{% set elementPartial = 'header' %}
-
 {% extends '_layouts/partials' %}
 
+{% set type = 'footer' %}
+
 {% block partial %}
-  <footer></footer>
+  <footer class="footer">
+    <div class="footer__body d-flex align-items-center py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            {% if logoGeneral %}
+              <img data-src="{{ logoGeneral.url }}"
+                alt="{{ logoGeneral.title }}"
+                class="img-fluid lazyload"
+                width="150" />
+            {% endif %}
+            {% if (socialMedia|length) > 0 %}
+              <ul class="p-0 m-0 d-flex py-4 justify-content-center align-items-center list-not-bullets">
+                {% for item in socialMedia %}
+                  <li class="mx-3">
+                    {% set icon = item.icon[0] ?? null %}
+                    {% set link = item.itemLink ?? null %}
+                    {% if link and icon %}
+                      {% if not link.isEmpty() %}
+                        <a {{ link.getLinkAttributes() }}
+                          class="footer__body--icon d-flex justify-content-center align-items-center flex-column">
+                          {{
+                            svg(icon)|attr({
+                              width: 21,
+                              height: 21
+                            })
+                          }}
+                        </a>
+                      {% endif %}
+                    {% endif %}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+            <p class="mb-2 mt-0">Morelia, Mexico</p>
+            <a href="#" class="btn mt-2 px-4 py-2 btn-outline-white">
+              Aviso de Privacidad
+            </a>
+          </div>
+          {# <div class="col-12 col-md-4"> #}
+          {# <p> #}
+          {# ¡No dejes pasar esta oportunidad única para convertir tu evento en #}
+          {# una verdadera fiesta! Envíanos un mensaje ahora para más #}
+          {# información y reserva tu fecha antes de que sea demasiado tarde. #}
+          {# </p> #}
+          {# </div> #}
+          {# <div class="col-12 col-md-2 ms-auto"> #}
+          {# {% if megaMenu %} #}
+          {# <ul class="py-3 px-0 m-0 list-not-bullets footer__body--menu"> #}
+          {# {% for item in megaMenu %} #}
+          {# <li class="my-4"> #}
+          {# {% set link = item.menuLink ?? null %} #}
+          {# {% if link and not link.isEmpty() %} #}
+          {# {{ #}
+          {# link.getLink({ #}
+          {# text: item.title #}
+          {# }) #}
+          {# }} #}
+          {# {% endif %} #}
+          {# </li> #}
+          {# {% endfor %} #}
+          {# </ul> #}
+          {# {% endif %} #}
+          {# </div> #}
+        </div>
+      </div>
+    </div>
+    <div class="footer__copyright text-center">
+      <p class="my-2 py-2">
+        © {{ now|date('Y') }} Grupo Rebel. Todos los Derechos reservados.
+      </p>
+    </div>
+  </footer>
 {% endblock %}

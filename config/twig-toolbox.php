@@ -1,9 +1,12 @@
 <?php
+
+include("./utils.php");
+
 return [
     'filters' => [],
     'functions' => [
-        'checkFiles' => function (string $path): bool {
-            if (!file_exists(CRAFT_BASE_PATH . "/web/" . $path)) {
+        'existElement' => function (string $path): bool {
+            if (!file_exists(CRAFT_BASE_PATH . $path)) {
                 return false;
             }
             return true;

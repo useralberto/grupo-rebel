@@ -1,7 +1,7 @@
 {
-  "name": "ondemandloading-template",
+  "name": "gruporebel",
   "version": "1.0.0",
-  "description": "OnDemandLoading Template",
+  "description": "Grupo Rebel",
   "main": "index.js",
   "scripts": {
     "development": "mix",

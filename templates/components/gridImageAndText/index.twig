@@ -1,0 +1,52 @@
+{% extends '_layouts/components' %}
+
+{% set constainerFluid = _block.fieldSwitch2 ?? false %}
+{% set classContainer = 'px-0 ' %}
+{% set image = _block.fieldImage[0] ?? null %}
+{% set description = _block.fieldRedactor ?? null %}
+{% set link = _block.fieldLink ?? null %}
+{% set invert = _block.fieldSwitch ?? false %}
+
+{% block componentContent %}
+  <div class="row gx-0 {{ invert ? 'flex-row-reverse ' : null }}">
+    <div class="col-12 col-lg-6">
+      <div class="{{ baseClass }}__contentImage h-100 p-0">
+        {% include 'quarks/_imageTransforms' with {
+          img: image,
+          setClass: 'img-absolute',
+          defualtImage: {
+            height: 800
+          },
+          transforms: {
+            '(min-width: 1200px)': {
+              height: 800
+            },
+            '(min-width: 992px)': {
+              height: 780
+            },
+            '(min-width: 576px)': {
+              height: 600
+            },
+            '': {
+              height: 500
+            }
+          }
+        } only %}
+      </div>
+    </div>
+    <div class="col-12 col-lg-6 d-flex flex-column justify-content-center p-4">
+      {% if description %}
+        <div class="{{ baseClass }}__description">{{ description }}</div>
+      {% endif %}
+      {% if link and not link.isEmpty() %}
+        <div class="pt-2 pb-5">
+          {{
+            link.getLink({
+              class: 'btn btn-outline-black px-4 py-2'
+            })
+          }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

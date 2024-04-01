@@ -1,7 +1,74 @@
-{% set elementPartial = 'footer' %}
-
 {% extends '_layouts/partials' %}
+{% set type = 'header' %}
 
 {% block partial %}
-  <header></header>
+  <header class="header">
+    <div class="header__top py-3 d-flex align-items-center">
+      <div class="container">
+        {% if (socialMedia|length) > 0 %}
+          <ul class="p-0 m-0 d-flex justify-content-end align-items-center list-not-bullets">
+            {% for item in socialMedia %}
+              <li class="me-4">
+                {% set icon = item.icon[0] ?? null %}
+                {% set link = item.itemLink ?? null %}
+                {% if link and icon %}
+                  {% if not link.isEmpty() %}
+                    <a {{ link.getLinkAttributes() }}
+                      class="header__top--icon d-flex justify-content-center align-items-center flex-column">
+                      {{
+                        svg(icon)|attr({
+                          width: 21,
+                          height: 21
+                        })
+                      }}
+                    </a>
+                  {% endif %}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+    <div class="header__nav p-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-4 py-1">
+            {% if logoGeneral %}
+              <a href="{{ siteUrl() }}">
+                <img src="{{ logoGeneral.url }}"
+                  width="80"
+                  height="80"
+                  alt="{{ logoGeneral.title }}" />
+              </a>
+            {% endif %}
+          </div>
+          <div class="col-8 d-none d-lg-flex flex-column justify-content-center">
+            {% if (megaMenu|length) > 0 %}
+              <ul class="p-0 m-0 d-flex align-items-center justify-content-end list-not-bullets">
+                {% for item in megaMenu %}
+                  <li class="py-3 me-4 px-2 header__nav--item">
+                    {% set link = item.menuLink ?? null %}
+                    {% if link and not link.isEmpty() %}
+                      {{
+                        link.getLink({
+                          text: item.title
+                        })
+                      }}
+                    {% endif %}
+                  </li>
+                {% endfor %}
+                <li class="py-3 me-4 px-2 header__nav--item">
+                  <a href="/#contact" onclick="scrollContactForm(event)">
+                    Contacto
+                  </a>
+                </li>
+              </ul>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="header-spacing"></section>
 {% endblock %}

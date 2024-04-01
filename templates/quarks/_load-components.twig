@@ -17,7 +17,11 @@
 
       {% set group = 'component' %}
 
-      {% include "components/#{type}/" %}
+      {% if existElement("/templates/#{group}s/#{type}") %}
+        {% include "components/#{type}/" %}
+      {% else %}
+        {% include 'quarks/_defaultComponent' %}
+      {% endif %}
     {% endif %}
   {% endfor %}
 {% endif %}

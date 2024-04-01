@@ -1,0 +1,12 @@
+{% extends '_layouts' %}
+
+{% block content %}
+  {% include 'quarks/_mastHead' %}
+
+  {{ sprig('partials/bodyEvents/') }}
+
+  {% include 'quarks/_load-components' with {
+    components: entry.components.collect() ?? [],
+    mtcc: false
+  } %}
+{% endblock %}

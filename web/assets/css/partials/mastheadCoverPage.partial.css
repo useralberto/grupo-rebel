@@ -1,0 +1,13 @@
+.mastheadCoverPage {
+  min-height: 500px;
+  color: var(--white);
+  position: relative;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(47, 36, 52) 47%, rgb(0, 0, 0) 97%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+}
+.mastheadCoverPage__title {
+  color: var(--white);
+  font-size: 35px;
+  font-weight: 700;
+}

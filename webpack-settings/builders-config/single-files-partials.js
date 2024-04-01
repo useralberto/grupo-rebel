@@ -28,13 +28,13 @@ exports.sfpt_start = () => {
       if (fs.existsSync(path_scss)) {
         mix.sass(
           path_scss,
-          `${path_out}css/partials/${name}.partials.css`,
+          `${path_out}css/partials/${name}.partial.css`,
           {},
           purgerArr
         );
       }
       if (fs.existsSync(path_js)) {
-        mix.js(path_js, `${path_out}js/partials/${name}.partials.js`);
+        mix.js(path_js, `${path_out}js/partials/${name}.partial.js`);
       }
     } catch (Exception) {
       console.warn(

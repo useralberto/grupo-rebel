@@ -1,11 +1,18 @@
 {
     "/web/assets/js/bootstrap.js": "/web/assets/js/bootstrap.js",
     "/web/assets/js/app.js": "/web/assets/js/app.js",
-    "/web/assets/js/components/mastHead.component.js": "/web/assets/js/components/mastHead.component.js",
-    "/web/assets/css/partials/footer.partials.css": "/web/assets/css/partials/footer.partials.css",
-    "/web/assets/css/components/mastHead.component.css": "/web/assets/css/components/mastHead.component.css",
+    "/web/assets/js/components/recentEvents.component.js": "/web/assets/js/components/recentEvents.component.js",
+    "/web/assets/css/components/recentEvents.component.css": "/web/assets/css/components/recentEvents.component.css",
+    "/web/assets/css/components/textBlock.component.css": "/web/assets/css/components/textBlock.component.css",
     "/web/assets/css/base.css": "/web/assets/css/base.css",
     "/web/assets/css/app.css": "/web/assets/css/app.css",
     "/web/assets/css/bootstrap.css": "/web/assets/css/bootstrap.css",
-    "/web/assets/css/partials/header.partials.css": "/web/assets/css/partials/header.partials.css"
+    "/web/assets/css/partials/mastheadSimple.partial.css": "/web/assets/css/partials/mastheadSimple.partial.css",
+    "/web/assets/css/partials/cardEvent.partial.css": "/web/assets/css/partials/cardEvent.partial.css",
+    "/web/assets/css/partials/mastheadCoverPage.partial.css": "/web/assets/css/partials/mastheadCoverPage.partial.css",
+    "/web/assets/css/partials/sideBar.partial.css": "/web/assets/css/partials/sideBar.partial.css",
+    "/web/assets/css/partials/header.partial.css": "/web/assets/css/partials/header.partial.css",
+    "/web/assets/css/partials/footer.partial.css": "/web/assets/css/partials/footer.partial.css",
+    "/web/assets/css/components/contactForm.component.css": "/web/assets/css/components/contactForm.component.css",
+    "/web/assets/css/components/gridImageAndText.component.css": "/web/assets/css/components/gridImageAndText.component.css"
 }

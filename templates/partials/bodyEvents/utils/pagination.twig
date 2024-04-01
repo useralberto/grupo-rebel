@@ -1,0 +1,83 @@
+{% if events %}
+  <ul class="mx-0 mt-5 p-0 blog__pagination">
+    <li class="blog__pagination--item me-2 my-2">
+      {% if page > 1 %}
+        <button sprig
+          s-select="#eventsApp"
+          s-target="#eventsApp"
+          s-swap="outerHTML"
+          s-val:page="{{ page - 1 }}"
+          class="blog__pagination--prev"
+          s-push-url="?page={{ page - 1 }}">
+          {# <img src="/assets/img/slider-prev.svg" #}
+          {# width="19" #}
+          {# height="30" #}
+          {# alt="prev" #}
+          {# class="img-fluid" /> #}
+        </button>
+      {% else %}
+        <button class="blog__pagination--prev" disabled>
+          {# <img src="/assets/img/slider-prev.svg" #}
+          {# width="19" #}
+          {# height="30" #}
+          {# alt="prev" #}
+          {# class="img-fluid" /> #}
+        </button>
+      {% endif %}
+    </li>
+
+    {% set itemsPerPage = 10 %}
+    {% set totalPages = pageInfo.totalPages %}
+
+    {% if totalPages > itemsPerPage %}
+      {% set startPage = (page - 1) // itemsPerPage * itemsPerPage + 1 %}
+      {% set endPage = min(startPage + itemsPerPage - 1, totalPages) %}
+    {% else %}
+      {% set startPage = 1 %}
+      {% set endPage = totalPages %}
+    {% endif %}
+
+    {% for i in startPage..endPage %}
+      <li class="blog__pagination--item m-2">
+        {% if i == page %}
+          <span class="blog__pagination--link active">{{ i }}</span>
+        {% else %}
+          <a sprig
+            s-val:page="{{ i }}"
+            s-push-url="?page={{ i }}"
+            s-select="#eventsApp"
+            s-target="#eventsApp"
+            s-swap="outerHTML"
+            class="blog__pagination--link">
+            {{ i }}
+          </a>
+        {% endif %}
+      </li>
+    {% endfor %}
+    <li class="blog__pagination--item ms-2 my-2">
+      {% if page < pageInfo.totalPages %}
+        <button sprig
+          s-select="#eventsApp"
+          s-target="#eventsApp"
+          s-swap="outerHTML"
+          s-val:page="{{ page + 1 }}"
+          class="blog__pagination--next"
+          s-push-url="?page={{ page + 1 }}">
+          {# <img src="/assets/img/slider-next.svg" #}
+          {# alt="next" #}
+          {# class="img-fluid" #}
+          {# width="19" #}
+          {# height="30" /> #}
+        </button>
+      {% else %}
+        <button class="blog__pagination--next" disabled>
+          {# <img src="/assets/img/slider-next.svg" #}
+          {# alt="next" #}
+          {# class="img-fluid" #}
+          {# width="19" #}
+          {# height="30" /> #}
+        </button>
+      {% endif %}
+    </li>
+  </ul>
+{% endif %}

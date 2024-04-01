@@ -1,0 +1,30 @@
+.mastheadCoverPage {
+  min-height: 500px;
+  color: var(--white);
+  position: relative;
+  background: rgb(0, 0, 0);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(47, 36, 52, 1) 47%,
+    rgba(0, 0, 0, 1) 97%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(47, 36, 52, 1) 47%,
+    rgba(0, 0, 0, 1) 97%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(47, 36, 52, 1) 47%,
+    rgba(0, 0, 0, 1) 97%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+  &__title {
+    color: var(--white);
+    font-size: 35px;
+    font-weight: 700;
+  }
+}

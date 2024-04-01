@@ -1,0 +1,21 @@
+{% extends '_layouts/partials' %}
+
+{% set type = 'cardEvent' %}
+{% set location = location ?? null %}
+{% set poster = poster ?? null %}
+{% set url = url ?? null %}
+{% set tags = tags ?? null %}
+
+{% set classCard =
+  'cardEvent px-4  py-3 d-flex flex-column justify-content-end'
+%}
+
+{% block partial %}
+  {% if url %}
+    <a href="{{ url }}" class="{{ classCard }}">
+      {% include 'quarks/_bodyCardEvent' %}
+    </a>
+  {% else %}
+    <div class="{{ classCard }}">{% include 'quarks/_bodyCardEvent' %}</div>
+  {% endif %}
+{% endblock %}

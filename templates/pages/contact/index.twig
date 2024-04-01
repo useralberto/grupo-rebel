@@ -1,0 +1,21 @@
+{% extends '_layouts' %}
+
+{% set form = freeform.form('contactForm') ?? null %}
+{% set description = entry.fieldRedactor ?? null %}
+{% block content %}
+  {% include 'quarks/_mastHead' %}
+
+  <div class="container py-4">
+    {% if description %}
+      <div class="py-2">{{ description }}</div>
+    {% endif %}
+    {% if form %}
+      {{ form.render() }}
+    {% endif %}
+  </div>
+
+  {% include 'quarks/_load-components' with {
+    components: entry.components.collect() ?? [],
+    mtcc: false
+  } %}
+{% endblock %}

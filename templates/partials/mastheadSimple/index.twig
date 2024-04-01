@@ -1,0 +1,26 @@
+{% extends '_layouts/partials' %}
+{% set type = mastHead.type %}
+{% set baseClass = type %}
+
+{% set bgImage = mastHead.backgroudImage[0] ?? null %}
+{% set title = mastHead.itemTitle ?? null %}
+{% set description = mastHead.description ?? null %}
+
+{% block partial %}
+  <div class="{{ baseClass }} d-flex justify-content-center flex-column">
+    {% if bgImage %}
+      {% include 'quarks/_imageTransforms' with {
+        img: bgImage,
+        setClass: 'img-absolute'
+      } only %}
+    {% endif %}
+    <div class="container">
+      <h1 class="{{ baseClass }}__title mb-1">
+        {{ title and (title|length) > 0 ? title : entry.title }}
+      </h1>
+      {% if description %}
+        <div class="{{ baseClass }}__description">{{ description }}</div>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

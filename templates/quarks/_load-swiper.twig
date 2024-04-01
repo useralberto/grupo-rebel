@@ -1,0 +1,16 @@
+{% set asyncJS = asyncJS ?? false %}
+{% include 'quarks/_loadAssets' with {
+  assets: [
+    {
+      type: 'css',
+      path: '//cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css',
+      externalLink: true
+    },
+    {
+      type: 'js',
+      path: '//cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js',
+      externalLink: true,
+      async: asyncJS
+    }
+  ]
+} only %}

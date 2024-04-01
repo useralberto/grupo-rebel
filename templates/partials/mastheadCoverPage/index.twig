@@ -1,0 +1,49 @@
+{% extends '_layouts/partials' %}
+{% set type = 'mastheadCoverPage' %}
+{% set logo = mastHead.logo[0] ?? null %}
+{% set image = mastHead.image[0] ?? null %}
+{% set title = mastHead.itemTitle ?? null %}
+{% set links = mastHead.buttons.collect() ?? [] %}
+
+{% block partial %}
+  <section class="mastheadCoverPage pt-5 d-flex justify-content-end flex-column align-items-center">
+    <div class="container mb-auto pt-3">
+      {% if logo %}
+        <div class="text-center">
+          <img src="{{ logo.url }}"
+            width="240"
+            height="auto"
+            alt="{{ logo.title }}" />
+        </div>
+      {% endif %}
+      <div class="pb-4 mt-2">
+        <h1 class="mastheadCoverPage__title mt-2 mb-3">
+          {% if title %}
+            {{ title }}
+          {% endif %}
+        </h1>
+        <ul class="d-flex p-0 m-0 justify-content-center align-items-center list-not-bullets pt-2 pb-3">
+          {% for item in links %}
+            {% set link = item.itemLink ?? null %}
+            {% if link and not link.isEmpty() %}
+              <li class="me-3 my-2">
+                {{
+                  link.getLink({
+                    class: "btn px-4 py-2 #{loop.last
+                      ? 'btn-outline-white'
+                      : 'btn-light '}"
+                  })
+                }}
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    {% if image %}
+      <img data-src="{{ image.url }}"
+        alt="{{ image.title }}"
+        class="img-fluid lazyload mt-1" />
+    {% endif %}
+  </section>
+{% endblock %}

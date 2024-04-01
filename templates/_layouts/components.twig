@@ -1,55 +1,33 @@
+{% extends '_layouts/_element.twig' %}
+
+{# Properties layout #}
+{% set group = 'component' %}
 {% set type = type ?? null %}
+
+{# Properties #}
 {% set mp = mp ?? null %}
-{% set group = group ?? null %}
 {% set baseClass = baseClass ?? null %}
+
+{# Container #}
 {% set constainerFluid = constainerFluid ?? false %}
+{% set classContainer = classContainer ?? '' %}
 
-{% block customComponent %}
-  <section data-component-handle="{{ type }}" class="{{ mp }}">
-    {% block componentBody %}
-      {{ baseClass ? ("<div class=#{baseClass}>")|raw : null }}
-      {% block componentContainer %}
-        <div class="{{ constainerFluid ? 'container-fluid' : 'container' }}">
-          {% block componentContent %}
-            {% if type %}
-              <p>Handle: {{ type }}</p>
-              <p>Path: "/components/{{ type }}/index.twig"</p>
-              <p>Margin and Padding: "{{ mp }}"</p>
-            {% else %}
-              <style>
-                code { background-color: #eee; border-radius: 3px; font-family:
-                courier, monospace; padding: 0 3px; }
-              </style>
-              <p>
-                Information is missing to locate the component correctly, you
-                can locate the component in the following path <code>
-                  /components/
-                </code>
-              </p>
-            {% endif %}
-          {% endblock %}
-        </div>
+{% block element %}
+  {% block customComponent %}
+    <section data-component-handle="{{ type }}" class="{{ mp }}">
+      {% block componentBody %}
+        {{ baseClass ? ("<div class=#{baseClass}>")|raw : null }}
+        {% block componentContainer %}
+          <div class="{{ constainerFluid ? 'container-fluid' : 'container' }} {{
+            classContainer
+            }}">
+            {% block componentContent %}
+              {% include 'quarks/_infoElement' %}
+            {% endblock %}
+          </div>
+        {% endblock %}
+        {{ baseClass ? '</div>'|raw : null }}
       {% endblock %}
-      {{ baseClass ? '</div>'|raw : null }}
-    {% endblock %}
-  </section>
-{% endblock %}
-
-{% block loadAssetsComponents %}
-  {% if type and group %}
-    {% include 'quarks/_loadAssets' with {
-      assets: [
-        {
-          type: 'css',
-          path: pathElements|format('css', "#{group}s", "#{type}.#{group}.css"),
-          preload: true
-        },
-        {
-          type: 'js',
-          path: pathElements|format('js', "#{group}s", "#{type}.#{group}.js"),
-          async: true
-        }
-      ]
-    } only %}
-  {% endif %}
+    </section>
+  {% endblock %}
 {% endblock %}

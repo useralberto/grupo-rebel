@@ -1,1 +1,28 @@
+.btn-outline-white {
+  --bs-btn-border-width: 1px;
+  --bs-btn-border-color: #ffffff;
+  --bs-btn-hover-border-color: #ffffff;
+  --bs-btn-color: var(--white);
+  --bs-btn-hover-color: var(--white);
+}
+.btn {
+  --bs-btn-border-radius: 25px;
+  --bs-btn-font-weight: 400;
+  --bs-btn-font-size: 17px;
 
+  &,
+  &:hover {
+    font-size: var(--bs-btn-font-size);
+    font-weight: var(--bs-btn-font-weight);
+  }
+}
+
+.btn-outline-black {
+  --bs-btn-color: var(--dark);
+  --bs-btn-bg: transparent;
+  --bs-btn-border-width: 1px;
+  --bs-btn-border-color: var(--dark);
+  --bs-btn-hover-border-color: var(--dark);
+  --bs-btn-hover-bg: var(--dark);
+  --bs-btn-hover-color: var(--white);
+}

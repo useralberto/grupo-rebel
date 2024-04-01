@@ -1,0 +1,30 @@
+{% set entries =
+  craft.entries.section('events').with(['poster']).orderBy(
+    'dateOfEvent desc'
+  ).limit(
+    3
+  )
+%}
+
+{% set page = page ?? 1 %}
+{% set pageInfo = sprig.paginate(entries, page) %}
+{% set events = pageInfo.pageResults %}
+
+<div class="container">
+  <div id="eventsApp">
+    {% for event in events %}
+      <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+          {% include 'partials/cardEvent/' with {
+            location: event.eventLocation,
+            poster: event.poster[0] ?? null,
+            url: event.url,
+            eventDate: event.dateOfEvent|date('Y-m-d'),
+            tags: event.tags.collect() ?? []
+          } %}
+        </div>
+      </div>
+    {% endfor %}
+    {% include 'partials/bodyEvents/utils/pagination' %}
+  </div>
+</div>

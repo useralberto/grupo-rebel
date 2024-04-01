@@ -1,0 +1,53 @@
+{% extends '_layouts/components' %}
+
+{% set loadSwiper = true %}
+{% set classContainer = classContainer ?? 'mt-5 mb-2' %}
+{% set constainerFluid = false %}
+
+{% set title = _block.fieldText ?? null %}
+{% set link = _block.fieldLink ?? null %}
+
+{% set events = craft.entries().section('events').orderBy(
+  'dateOfEvent desc'
+).limit(
+  6
+).dateOfEvent(
+  '<= ' ~ (now|date('Y-m-d'))
+).collect()
+  ?? null
+%}
+
+{% block componentContent %}
+  {% if title %}
+    <h2 class="{{ baseClass }}__title text-center mb-0">{{ title }}</h2>
+  {% endif %}
+  {% if (events|length) > 0 %}
+    <div class="swiper recentEventsComponent">
+      <div class="swiper-wrapper mb-5 py-5">
+        {% for event in events %}
+          <div class="swiper-slide">
+            {% include 'partials/cardEvent/' with {
+              location: event.eventLocation,
+              poster: event.poster[0] ?? null,
+              url: event.url,
+              eventDate: event.dateOfEvent|date('Y-m-d'),
+              tags: event.tags.collect() ?? []
+            } %}
+          </div>
+        {% endfor %}
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  {% endif %}
+  {% if link %}
+    <div class="text-center mt-4">
+      {% if not link.isEmpty() %}
+        {{
+          link.getLink({
+            class: 'btn btn-outline-black px-4 py-2'
+          })
+        }}
+      {% endif %}
+    </div>
+  {% endif %}
+{% endblock %}

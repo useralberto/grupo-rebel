@@ -1,0 +1,5 @@
+{% set mastHead = entry.masthead[0] ?? null %}
+
+{% if mastHead %}
+  {% include "partials/#{mastHead.type}/" %}
+{% endif %}

@@ -1,0 +1,28 @@
+{% set loadSwiper = loadSwiper ?? false %}
+{% set loadSwiperAsyncJs = loadSwiperAsyncJs ?? false %}
+
+{% block element %}{% endblock %}
+
+{% block loadAssets %}
+  {% if loadSwiper %}
+    {% include 'quarks/_load-swiper' with {
+      asyncJS: loadSwiperAsyncJs ?? false
+    } %}
+  {% endif %}
+  {% if type and group %}
+    {% include 'quarks/_loadAssets' with {
+      assets: [
+        {
+          type: 'css',
+          path: pathElements|format('css', "#{group}s", "#{type}.#{group}.css"),
+          preload: true
+        },
+        {
+          type: 'js',
+          path: pathElements|format('js', "#{group}s", "#{type}.#{group}.js"),
+          async: true
+        }
+      ]
+    } only %}
+  {% endif %}
+{% endblock %}

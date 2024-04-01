@@ -1,0 +1,56 @@
+{% extends '_layouts/components' %}
+
+{% set title = _block.fieldText ?? null %}
+{% set image = _block.fieldImage[0] ?? null %}
+{% set description = _block.fieldRedactor ?? null %}
+{% set invert = _block.fieldSwitch ?? false %}
+{% set form = freeform.form('contactForm') ?? null %}
+
+{% block customComponent %}
+  <section data-component-handle="{{ type }}"
+    class="{{ mp }} {{ baseClass }}"
+    id="contact">
+    <div class="container-fluid px-0">
+      <div class="row  gx-0  {{ invert ? 'flex-row-reverse ' : null }}">
+        <div class="col-12 col-lg-5">
+          <div class="{{ baseClass }}__contentImage px-0 h-100">
+            {% include 'quarks/_imageTransforms' with {
+              img: image,
+              setClass: 'img-absolute',
+              defualtImage: {
+                height: 800
+              },
+              transforms: {
+                '(min-width: 1200px)': {
+                  height: 800
+                },
+                '(min-width: 992px)': {
+                  height: 780
+                },
+                '(min-width: 576px)': {
+                  height: 600
+                },
+                '': {
+                  height: 500
+                }
+              }
+            } only %}
+          </div>
+        </div>
+        <div class="col-12 col-lg-7 px-4 pt-3 pb-5">
+          {% if title %}
+            <h2 class="{{ baseClass }}__title ">{{ title }}</h2>
+          {% endif %}
+          {% if description %}
+            <div class="{{ baseClass }}__description pb-2">
+              {{ description }}
+            </div>
+          {% endif %}
+          {% if form %}
+            {{ form.render() }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

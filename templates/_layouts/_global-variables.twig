@@ -1,15 +1,36 @@
 {# Set all variables globales #}
 {# {% set megaMenu = craft.entries().section('menu').level(1).limit(7).collect() %} #}
 
-{# {% set general = craft.globalSets().handle('general').with(['fieldImage']).one() #}
-{# ?? null #}
-{# %} #}
+{% set displayComponentInfo = ['staging', 'dev'] %}
 
-{# {% set logoGeneral = general.fieldImage[0] ?? null %} #}
+{% set general = craft.globalSets().handle('general').with(
+  ['fieldImage', 'socialMedia.icon']
+).one()
+  ?? null
+%}
+
+{% set logoGeneral = general.fieldImage[0] ?? null %}
+{% set socialMedia = general.socialMedia.collect() ?? [] %}
+{% set megaMenu = craft.entries().section('menu').level(1).limit(6).all() %}
 
 {# Some come globals ... #}
 {% set pathBaseAssets = '/assets/' %}
 {% set pathElements = "#{pathBaseAssets}%s/%s/%s" %}
+
+{% set statusEvents = {
+  isNow: {
+    label: '¡Es hoy!',
+    color: '#dc3545'
+  },
+  finished: {
+    label: 'Finalizado',
+    color: '#4f5051'
+  },
+  confirmed: {
+    label: '¡Confirmado!',
+    color: '#20c997'
+  }
+} %}
 
 {# {% do sprig.setRegisterScript(false) %} #}
 

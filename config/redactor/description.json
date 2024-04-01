@@ -1,0 +1,6 @@
+{
+  "buttons": ["bold", "italic", "link", "formatting"],
+  "toolbarFixed": true,
+  "formattingHide": ["h1", "h2", "h3", "h5", "h6", "pre"],
+  "plugins": ["alignment", "properties"]
+}

@@ -1,0 +1,54 @@
+@use "../../../../src/scss/utilities";
+.mastheadSimple {
+  position: relative;
+  min-height: 230px;
+  &::after {
+    content: "";
+    @extend %img-absolute;
+    background: rgb(0, 0, 0);
+    background: -moz-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(47, 36, 52, 1) 47%,
+      rgba(0, 0, 0, 1) 97%
+    );
+    background: -webkit-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(47, 36, 52, 1) 47%,
+      rgba(0, 0, 0, 1) 97%
+    );
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(47, 36, 52, 1) 47%,
+      rgba(0, 0, 0, 1) 97%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+
+    opacity: 0.8;
+    mix-blend-mode: multiply;
+    z-index: -1;
+  }
+  .img-absolute {
+    z-index: -2;
+  }
+
+  &__title,
+  &__description {
+    &,
+    a,
+    a:hover {
+      color: var(--white);
+    }
+  }
+  &__description {
+    font-size: 18px;
+    font-weight: 500;
+    a,
+    a:hover {
+      font-size: 19px;
+      font-weight: 600;
+    }
+  }
+}

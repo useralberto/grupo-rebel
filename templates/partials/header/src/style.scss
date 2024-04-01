@@ -1,0 +1,31 @@
+.header {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.22);
+  &__top {
+    background-color: var(--white);
+    &--icon {
+      svg {
+        fill: var(--dark);
+      }
+      &:hover svg {
+        fill: #2f2434;
+      }
+    }
+  }
+  &__nav {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      90deg,
+      rgb(0, 0, 0) 0%,
+      rgb(47, 36, 52) 47%,
+      rgb(0, 0, 0) 97%
+    );
+    &--item {
+      a,
+      a:hover {
+        color: var(--white);
+        text-transform: uppercase;
+        font-size: 17px;
+      }
+    }
+  }
+}
