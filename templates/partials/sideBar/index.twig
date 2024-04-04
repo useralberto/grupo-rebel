@@ -1,7 +1,40 @@
-{% set elementPartial = 'sideBar' %}
+{% set type = 'sideBar' %}
 
 {% extends '_layouts/partials' %}
 
 {% block partial %}
-  <aside></aside>
+  <aside class="sideBar d-none" id="sideBar">
+    <section class="header-spacing"></section>
+    <div class="sideBar__body pt-3">
+      <div class="container px-4 pb-3">
+        <ul class="sideBar__list m-0 px-0 pt-4">
+          {% for item in megaMenu %}
+            <li class="mb-2 pb-2">
+              {% set link = item.menuLink ?? null %}
+              {% if link and not link.isEmpty() %}
+                {{
+                  link.getLink({
+                    text: item.title,
+                    class: 'py-2 px-3 col-10 sideBar__list--item'
+                  })
+                }}
+              {% endif %}
+            </li>
+          {% endfor %}
+          <li class="mb-2 pb-2">
+            <a href="/#contact" class="py-2 px-3 col-10 sideBar__list--item">
+              Contacto
+            </a>
+          </li>
+        </ul>
+      </div>
+      {% if LinkGeneral and not LinkGeneral.isEmpty() %}
+        {{
+          LinkGeneral.getLink({
+            class: 'py-2 px-3 btn btn-light d-block w-100'
+          })
+        }}
+      {% endif %}
+    </div>
+  </aside>
 {% endblock %}

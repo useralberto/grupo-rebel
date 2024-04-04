@@ -1,27 +1,19 @@
 {% if events %}
-  <ul class="mx-0 mt-5 p-0 blog__pagination">
-    <li class="blog__pagination--item me-2 my-2">
+  <ul class="mx-0 mt-5 p-0 eventsBody__pagination list-not-bullets d-flex justify-content-center flex-wrap align-items-center">
+    <li class="me-3 my-2">
       {% if page > 1 %}
         <button sprig
           s-select="#eventsApp"
           s-target="#eventsApp"
           s-swap="outerHTML"
           s-val:page="{{ page - 1 }}"
-          class="blog__pagination--prev"
+          class="btn px-3 py-1 btn-outline-black"
           s-push-url="?page={{ page - 1 }}">
-          {# <img src="/assets/img/slider-prev.svg" #}
-          {# width="19" #}
-          {# height="30" #}
-          {# alt="prev" #}
-          {# class="img-fluid" /> #}
+          Anterior
         </button>
       {% else %}
-        <button class="blog__pagination--prev" disabled>
-          {# <img src="/assets/img/slider-prev.svg" #}
-          {# width="19" #}
-          {# height="30" #}
-          {# alt="prev" #}
-          {# class="img-fluid" /> #}
+        <button class="btn px-3 py-1 btn-outline-black" disabled>
+          Anterior
         </button>
       {% endif %}
     </li>
@@ -38,9 +30,9 @@
     {% endif %}
 
     {% for i in startPage..endPage %}
-      <li class="blog__pagination--item m-2">
+      <li class="eventsBody__pagination--item m-2">
         {% if i == page %}
-          <span class="blog__pagination--link active">{{ i }}</span>
+          <span class="active" style="font-size: 19px;">{{ i }}</span>
         {% else %}
           <a sprig
             s-val:page="{{ i }}"
@@ -48,34 +40,27 @@
             s-select="#eventsApp"
             s-target="#eventsApp"
             s-swap="outerHTML"
-            class="blog__pagination--link">
+            style="font-size: 19px;"
+            class="">
             {{ i }}
           </a>
         {% endif %}
       </li>
     {% endfor %}
-    <li class="blog__pagination--item ms-2 my-2">
+    <li class="blog__pagination--item ms-3 my-2">
       {% if page < pageInfo.totalPages %}
         <button sprig
           s-select="#eventsApp"
           s-target="#eventsApp"
           s-swap="outerHTML"
           s-val:page="{{ page + 1 }}"
-          class="blog__pagination--next"
+          class="btn px-3 py-1 btn-outline-black"
           s-push-url="?page={{ page + 1 }}">
-          {# <img src="/assets/img/slider-next.svg" #}
-          {# alt="next" #}
-          {# class="img-fluid" #}
-          {# width="19" #}
-          {# height="30" /> #}
+          Próximo
         </button>
       {% else %}
-        <button class="blog__pagination--next" disabled>
-          {# <img src="/assets/img/slider-next.svg" #}
-          {# alt="next" #}
-          {# class="img-fluid" #}
-          {# width="19" #}
-          {# height="30" /> #}
+        <button class="btn btn-outline-black px-3 py-1" disabled>
+          Próximo
         </button>
       {% endif %}
     </li>

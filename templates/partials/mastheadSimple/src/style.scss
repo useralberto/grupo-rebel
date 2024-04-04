@@ -43,11 +43,16 @@
     }
   }
   &__title {
-    font-size: 45px;
+    font-size: 1.2;
+    font-size: clamp(2.3rem, -0.5rem + 4.5vw, 2.8125rem);
   }
   &__description {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 1rem;
+    font-size: clamp(1rem, 0.8438rem + 0.5vw, 1.125rem);
+
+    p {
+      font-weight: 300;
+    }
     a,
     a:hover {
       font-size: 19px;

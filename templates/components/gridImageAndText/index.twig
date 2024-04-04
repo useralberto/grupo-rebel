@@ -10,7 +10,10 @@
 {% block componentContent %}
   <div class="row gx-0 {{ invert ? 'flex-row-reverse ' : null }}">
     <div class="col-12 col-lg-6">
-      <div class="{{ baseClass }}__contentImage h-100 p-0">
+      <div class="{{ baseClass }}__contentImage h-100 p-0"
+        data-aos="fade-up"
+        data-aos-easing="ease-in-out"
+        data-aos-duration="2000">
         {% include 'quarks/_imageTransforms' with {
           img: image,
           setClass: 'img-absolute',
@@ -36,7 +39,10 @@
     </div>
     <div class="col-12 col-lg-6 d-flex flex-column justify-content-center p-4">
       {% if description %}
-        <div class="{{ baseClass }}__description">{{ description }}</div>
+        <div class="{{ baseClass }}__description"
+          data-aos="customAnimation2Redactor">
+          {{ description }}
+        </div>
       {% endif %}
       {% if link and not link.isEmpty() %}
         <div class="pt-2 pb-5">

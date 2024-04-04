@@ -11,6 +11,7 @@
 
 {% set logoGeneral = general.fieldImage[0] ?? null %}
 {% set socialMedia = general.socialMedia.collect() ?? [] %}
+{% set LinkGeneral = general.fieldLink ?? [] %}
 {% set megaMenu = craft.entries().section('menu').level(1).limit(6).all() %}
 
 {# Some come globals ... #}

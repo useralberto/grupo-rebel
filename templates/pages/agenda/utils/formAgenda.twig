@@ -1,0 +1,33 @@
+{% set form = freeform.form('calendar') %}
+{% if form %}
+  <div id="modalAgenda" class="modalAgenda" style="display:none!important;">
+    <div class="modalAgenda__content p-lg-4 my-5 mx-auto col-11 col-md-8 col-lg-6">
+      <div class="modalAgenda__header px-4 py-4 d-flex justify-content-between align-items-center">
+        <p class="modalAgenda__title m-0">Agenda con Rebel: Norteño en Vivo</p>
+        <button class="btn modalAgenda__close d-flex flex-column justify-content-center"
+          sprig
+          on:click="closeModal(event, this)"
+          s-select="#modalAgenda"
+          s-target="#modalAgenda"
+          s-swap="outerHTML">
+          {{
+            svg('@webroot/assets/images/closeModal.svg')|attr({
+              width: 25,
+              height: 25
+            })
+          }}
+        </button>
+      </div>
+      <div class="modalAgenda__body px-4 pb-4 pt-2">
+        {{
+          form.render({
+            attributes: {
+              class: 'agenda__form',
+              id: 'agendaForm'
+            }
+          })
+        }}
+      </div>
+    </div>
+  </div>
+{% endif %}

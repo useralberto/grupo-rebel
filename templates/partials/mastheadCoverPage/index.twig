@@ -13,11 +13,14 @@
           <img src="{{ logo.url }}"
             width="240"
             height="auto"
+            data-aos="fade-up"
+            data-aos-easing="linear"
+            data-aos-duration="1200"
             alt="{{ logo.title }}" />
         </div>
       {% endif %}
       <div class="pb-4 mt-2">
-        <h1 class="mastheadCoverPage__title mt-2 mb-3">
+        <h1 class="mastheadCoverPage__title px-3 px-xl-0 mt-2 mb-3">
           {% if title %}
             {{ title }}
           {% endif %}
@@ -29,7 +32,7 @@
               <li class="me-3 my-2">
                 {{
                   link.getLink({
-                    class: "btn px-4 py-2 #{loop.last
+                    class: "btn px-lg-4 py-lg-2 #{loop.last
                       ? 'btn-outline-white'
                       : 'btn-light '}"
                   })
@@ -41,9 +44,12 @@
       </div>
     </div>
     {% if image %}
-      <img data-src="{{ image.url }}"
+      <img src="{{ image.url }}"
+        data-aos="fade-up"
+        data-aos-easing="linear"
+        data-aos-duration="1750"
         alt="{{ image.title }}"
-        class="img-fluid lazyload mt-1" />
+        class="img-fluid mt-1" />
     {% endif %}
   </section>
 {% endblock %}

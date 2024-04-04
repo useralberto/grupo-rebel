@@ -1,0 +1,19 @@
+{% set startTime = element.startTime %}
+{% set endTime = element.endTime %}
+
+{% set differenceInSeconds = (endTime|date('U')) - (startTime|date('U')) %}
+
+{% set differenceInHours = differenceInSeconds / 3600 %}
+{% set differenceInMinutes = differenceInSeconds / 60 %}
+
+{% set hours = differenceInHours|round(0, 'floor') %}
+{% set remainingMinutes =
+  (differenceInMinutes - hours * 60)|round(0, 'floor')
+%}
+<p style="font-size:18px;">
+  Las horas a cotizar son las siguientes:
+  <strong>
+    {{ hours }} hr {{ remainingMinutes }}
+    min.
+  </strong>
+</p>

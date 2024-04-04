@@ -1,0 +1,67 @@
+{% set firstDayOfMonth = now|date_modify('first day of this month') %}
+{% set dataEvents =
+  craft.entries().section('calendar').dateOfEvent(
+    ">= #{firstDayOfMonth|date('Y-m-d')}"
+  ).collect()
+%}
+
+{% set statusColors = {
+  new: {
+    bgColor: '#00aaff',
+    fontColor: '#fff'
+  },
+  negotiation: {
+    bgColor: '#f8b830',
+    fontColor: '#fff'
+  },
+  confirmed: {
+    bgColor: '00b803',
+    fontColor: '#fff'
+  },
+  notAvailable: {
+    bgColor: '#949494',
+    fontColor: '#fff'
+  }
+} %}
+
+{% set events = [] %}
+{% for event in dataEvents %}
+  {% set statuEvent = event.eventStatus.value ?? 'cancelled' %}
+  {% if statuEvent != 'cancelled' %}
+    {% set statusColorsItem = statusColors[statuEvent] %}
+
+    {% set startDate =
+      date(
+        (event.dateOfEvent|date('Y-m-d')) ~ ' '
+          ~ (event.startTime|date('H:i:s'))
+      )
+    %}
+    {% set endDate =
+      date(
+        (event.dateOfEvent|date('Y-m-d')) ~ ' ' ~ (event.endTime|date('H:i:s'))
+      )
+    %}
+
+    {% set item = {
+      start: startDate|date('c'),
+      end: endDate|date('c'),
+      color: statusColorsItem.bgColor,
+      textColor: statusColorsItem.fontColor,
+      allDay: statuEvent == 'notAvailable',
+      title: statuEvent == 'notAvailable'
+        ? event.title
+        : event.city ~ '| ' ~ (event.dateOfEvent|date('l | j F')|capitalize)
+    } %}
+
+    {% set events = events|merge([item]) %}
+  {% endif %}
+{% endfor %}
+
+{% set appEvents %}
+  window.events = {{ events|json_encode|raw }};
+{% endset %}
+{% do view.registerJs(appEvents, POS_HEAD) %}
+
+<div class="agenda" id="agenda"></div>
+
+{{ sprig('pages/agenda/utils/formAgenda') }}

@@ -1,0 +1,24 @@
+.hamburger {
+  padding: 0px !important;
+  &:hover {
+    opacity: 1 !important;
+  }
+  &-box,
+  &-inner,
+  &-inner::after,
+  &-inner::before {
+    width: 35px !important;
+  }
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    height: 3px !important;
+  }
+  &-inner {
+    &,
+    &::after,
+    &::before {
+      background-color: #fff !important;
+    }
+  }
+}

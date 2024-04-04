@@ -10,7 +10,7 @@ exports.sfp_start = () => {
 
   pages.list.forEach((item) => {
     try {
-      const { customName, page, file, deep, purgerException } = item;
+      const { page, customName, deep, purgerException, file } = item;
       const name = customName ? customName : `${page}`;
       const path_scss = `${path_pages}/${page}/src/${name}.scss`;
       const path_js = `${path_pages}/${page}/src/${name}.js`;

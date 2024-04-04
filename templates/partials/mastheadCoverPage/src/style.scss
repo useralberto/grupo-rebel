@@ -1,4 +1,5 @@
 .mastheadCoverPage {
+  overflow: hidden;
   min-height: 500px;
   color: var(--white);
   position: relative;
@@ -24,7 +25,14 @@
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
   &__title {
     color: var(--white);
-    font-size: 35px;
+    font-size: 1rem;
+    font-size: clamp(1rem, 1.2rem + 1vw, 2.2rem);
     font-weight: 700;
+    @media (max-width: 991.98px) {
+      text-align: center;
+      p {
+        display: inline !important;
+      }
+    }
   }
 }

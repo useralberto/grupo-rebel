@@ -53,7 +53,11 @@ if (sideBar) {
         await timeout(320);
         sideBar.classList.remove("v-hidden");
         headroom.unfreeze();
+        sideBar.classList.add("d-none");
+        document.body.removeAttribute("style");
       } else {
+        document.body.setAttribute("style", "overflow:hidden;");
+        sideBar.classList.remove("d-none");
         headroom.freeze();
         sideBar.classList.remove("v-hidden");
         element.classList.add("is-active");

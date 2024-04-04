@@ -42,7 +42,7 @@
             s-target="#eventsApp"
             s-swap="outerHTML"
             s-val:section="{{ btn }}"
-            class="btn btn-outline-black px-4 py-1 {{
+            class="btn btn-outline-black my-2 px-4 py-1 {{
             section == btn
               ? 'active'
             }}">
@@ -71,3 +71,23 @@
     {% include 'partials/bodyEvents/utils/pagination' %}
   </div>
 </div>
+
+{% set type = 'bodyEvents' %}
+{% set group = 'partial' %}
+
+{% if type and group %}
+  {% include 'quarks/_loadAssets' with {
+    assets: [
+      {
+        type: 'css',
+        path: pathElements|format('css', "#{group}s", "#{type}.#{group}.css"),
+        preload: true
+      },
+      {
+        type: 'js',
+        path: pathElements|format('js', "#{group}s", "#{type}.#{group}.js"),
+        async: true
+      }
+    ]
+  } only %}
+{% endif %}
