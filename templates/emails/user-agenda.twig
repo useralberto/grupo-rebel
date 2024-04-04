@@ -1,0 +1,161 @@
+{# subject: "{{ submission.fullName }}, hemos recibido su solicitud" #}
+{# fromEmail: "gruporebel2@gmail.com" #}
+{# fromName: "Grupo Rebel" #}
+{# replyToName: "Grupo Rebel" #}
+{# replyToEmail: "no-reply@gruporebel.com" #}
+{# cc: #}
+{# bcc: #}
+{# includeAttachments: true #}
+{# templateName: Request for quotation - user #}
+{# description: #}
+
+{% extends '_layouts/email' %}
+
+{% block content %}
+  <div>
+    <div class="layout one-col fixed-width stack"
+      style="Margin: 0 auto;max-width: 600px;min-width: 320px; width: 320px;width: calc(28000% - 167400px);overflow-wrap: break-word;word-wrap: break-word;word-break: break-word;">
+      <div class="layout__inner"
+        style="border-collapse: collapse;display: table;width: 100%;background-color: #f7f7f7;">
+        <!-- [if mso]><table align="center" cellpadding="0" cellspacing="0" role="presentation"><tr class="layout-fixed-width" style="background-color: #f7f7f7;"><td style="width: 600px" class="w560"><![endif] -->
+        <div class="column"
+          style="text-align: left;color: #595959;font-size: 14px;line-height: 21px;font-family: Open Sans,sans-serif;">
+          <div style="Margin-left: 20px;Margin-right: 20px;Margin-top: 24px;">
+            <div style="mso-line-height-rule: exactly;line-height: 5px;font-size: 1px;">
+              &nbsp;
+            </div>
+          </div>
+
+          <div style="Margin-left: 20px;Margin-right: 20px;">
+            <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+              <h1 class="size-24"
+                style="Margin-top: 0;Margin-bottom: 0;font-style: normal;font-weight: normal;color: #b8bdc9;font-size: 20px;line-height: 28px;text-align: left;"
+                lang="x-size-24">
+                <span style="text-decoration: inherit;color: #171717;">
+                  <strong>{{ submission.fullName }}</strong>, hemos recibido su
+                  solicitud.
+                </span>
+              </h1>
+              <p class="size-17"
+                style="Margin-top: 20px;Margin-bottom: 20px;font-size: 17px;line-height: 26px;"
+                lang="x-size-17">
+                <span style="text-decoration: inherit;color: #171717;">
+                  Nos comunicaremos con usted lo antes posible para afinar
+                  detalles según la información proporcionada.
+                </span>
+              </p>
+            </div>
+          </div>
+
+          {# <div style="Margin-left: 20px;Margin-right: 20px;"> #}
+          {# <div style="mso-line-height-rule: exactly;line-height: 20px;font-size: 1px;"> #}
+          {# &nbsp; #}
+          {# </div> #}
+          {# </div> #}
+
+          <div style="Margin-left: 20px;Margin-right: 20px;">
+            {# <div class="btn btn--flat btn--large" #}
+            {# style="Margin-bottom: 20px;text-align: left;"> #}
+            {# <!-- [if !mso]><! --><a style="border-radius: 4px;display: inline-block;font-size: 14px;font-weight: bold;line-height: 24px;padding: 12px 24px;text-align: center;text-decoration: none !important;transition: opacity 0.1s ease-in;color: #ffffff !important;background-color: #6b7489;font-family: Lato, Tahoma, sans-serif;" #}
+            {# href="http://example.com"> #}
+            {# Update billing info #}
+            {# </a><!-- <![endif] --> #}
+            {# <!-- [if mso]><p style="line-height:0;margin:0;">&nbsp;</p><v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="http://example.com" style="width:132.75pt" arcsize="9%" fillcolor="#6B7489" stroke="f"><v:textbox style="mso-fit-shape-to-text:t" inset="0pt,8.25pt,0pt,8.25pt"><center style="font-size:14px;line-height:24px;color:#FFFFFF;font-family:Lato,Tahoma,sans-serif;font-weight:bold;mso-line-height-rule:exactly;mso-text-raise:1.5px">Update billing info</center></v:textbox></v:roundrect><![endif] --> #}
+            {# </div> #}
+            {% set eventDate = submission.dateEvent ?? null %}
+            {% set startTime = submission.startTime ?? null %}
+            {% set endTime = submission.endTime ?? null %}
+
+            {% set differenceInSeconds = (endTime|date('U'))
+              - (startTime|date('U'))
+            %}
+
+            {% set differenceInHours = differenceInSeconds / 3600 %}
+            {% set differenceInMinutes = differenceInSeconds / 60 %}
+
+            {% set hours = differenceInHours|round(0, 'floor') %}
+            {% set remainingMinutes =
+              (differenceInMinutes - hours * 60)|round(0, 'floor')
+            %}
+
+            <p class="size-17"
+              style="Margin-top: 20px;Margin-bottom: 0;font-size: 17px;line-height: 26px;"
+              lang="x-size-17">
+              <strong>Resumen</strong>
+            </p>
+
+            <p class="size-17"
+              style="Margin-top: 20px;Margin-bottom: 20px;font-size: 17px;line-height: 26px;"
+              lang="x-size-17">
+              <span style="text-decoration: inherit;color: #171717;">
+                Cotización para el día
+                <strong>{{ eventDate.value|date('l j F')|capitalize }}</strong>,
+                en un horario de
+                <strong>{{ startTime.value }} a {{ endTime.value }}</strong>,
+                estimando un tiempo de {{ hours }} h {{ remainingMinutes }}
+                min.
+              </span>
+            </p>
+            <ul style="list-style:none; margin:0px; padding:0px;">
+              {% for field in submission %}
+                {% if
+                  field.type != 'html'
+                    and field.handle
+                      not in ['startTime', 'endTime', 'dateEvent', 'message']
+                    and field.value %}
+                  <li class="size-17"
+                    style="Margin-top: .5rem;Margin-bottom: .5rem;font-size: 17px;line-height: 26px;"
+                    lang="x-size-17">
+                    <strong>{{ field.label }}</strong>
+                    <br />
+                    {{ field.value }}
+                  </li>
+                {% endif %}
+              {% endfor %}
+              <li class="size-17"
+                style="Margin-top: .5rem;Margin-bottom: .5rem;font-size: 17px;line-height: 26px;"
+                lang="x-size-17">
+                <strong>{{ submission.message.label }}</strong>
+                <br />
+                {{ submission.message.value }}
+              </li>
+            </ul>
+          </div>
+
+          {# <div style="Margin-left: 20px;Margin-right: 20px;"> #}
+          {# <div style="mso-line-height-rule: exactly;line-height: 20px;font-size: 1px;"> #}
+          {# &nbsp; #}
+          {# </div> #}
+          {# </div> #}
+
+          <div style="Margin-left: 20px;Margin-right: 20px;Margin-bottom: 24px;">
+            <div style="mso-line-height-rule: exactly;mso-text-raise: 11px;vertical-align: middle;">
+              {# <p class="size-17" #}
+              {# style="Margin-top: 0;Margin-bottom: 0;font-size: 17px;line-height: 26px;" #}
+              {# lang="x-size-17"> #}
+              {# Lorem ipsum dolor sit amet,<br /> #}
+              {# consectetur adipiscing elit. #}
+              {# </p> #}
+              <p class="size-17"
+                style="Margin-top: 20px;Margin-bottom: 0;font-size: 17px;line-height: 26px;"
+                lang="x-size-17">
+                Gracias, estamos atentos a sus comentarios.
+                <br />
+                Contáctenos a través de nuestros medios de comunicación.
+                <br />
+                <br />
+                <strong>Grupo Rebel</strong><br />
+                <em>Ventas - Alberto Alonso</em>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- [if mso]></td></tr></table><![endif] -->
+      </div>
+    </div>
+
+    <div style="mso-line-height-rule: exactly;line-height: 20px;font-size: 20px;">
+      &nbsp;
+    </div>
+  </div>
+{% endblock %}
